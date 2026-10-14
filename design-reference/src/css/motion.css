@@ -1,0 +1,36 @@
+/* Motion support — the effects themselves live in src/js/motion/. */
+@import url('lenis/dist/lenis.css');
+
+/* Once split into letters a word could wrap between them — the wordmark never wraps. */
+[data-motion~='word'] {
+  white-space: nowrap;
+}
+
+/* Split-text masks: a little room above and below so accents, dots and Arabic descenders
+   are not clipped while the text rises. */
+.u-split-char-mask,
+.u-split-word-mask,
+.u-split-line-mask {
+  padding-block: 0.12em;
+  margin-block: -0.12em;
+}
+
+/* Parallax frame: the picture is taller than its frame, so it can drift without showing an edge. */
+.u-parallax {
+  position: relative;
+  overflow: hidden;
+}
+
+.u-parallax > * {
+  position: absolute;
+  inset: -10% 0;
+}
+
+/* Until the motion system has set each element's starting state (a split second after load). */
+.is-motion-pending [data-motion~='word'],
+.is-motion-pending [data-motion~='chars'],
+.is-motion-pending [data-motion~='lines'],
+.is-motion-pending [data-motion~='reveal'],
+.is-motion-pending [data-motion~='cards'] > * {
+  visibility: hidden;
+}

@@ -14,19 +14,27 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   reporter: process.env.CI ? 'github' : 'list',
   use: { baseURL, trace: 'retain-on-failure' },
+  // Tests tagged @reduced-motion only run in the reduced-motion project, and only there.
   projects: [
     {
       name: 'desktop-chromium',
+      grepInvert: /@reduced-motion/,
       use: { ...devices['Desktop Chrome'], viewport: { width: 1440, height: 900 } },
     },
     {
       name: 'mobile',
+      grepInvert: /@reduced-motion/,
       use: {
         ...devices['Desktop Chrome'],
         viewport: { width: 375, height: 812 },
         isMobile: true,
         hasTouch: true,
       },
+    },
+    {
+      name: 'reduced-motion',
+      grep: /@reduced-motion/,
+      use: { ...devices['Desktop Chrome'], viewport: { width: 1440, height: 900 }, reducedMotion: 'reduce' },
     },
   ],
   webServer: process.env.BASE_URL

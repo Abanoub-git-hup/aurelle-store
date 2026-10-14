@@ -1,0 +1,6 @@
+# One line ending everywhere (Prettier writes LF); binaries untouched.
+* text=auto eol=lf
+*.woff2 binary
+*.png binary
+*.jpg binary
+*.webp binary

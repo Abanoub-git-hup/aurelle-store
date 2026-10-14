@@ -1,0 +1,46 @@
+/* Temporary motion study on the home page — removed once real sections carry the effects. */
+.s-motion-demo__inner {
+  display: grid;
+  gap: var(--space-5);
+  padding-block: var(--section-gap);
+}
+
+.s-motion-demo__title {
+  max-inline-size: 16ch;
+}
+
+.s-motion-demo__text {
+  max-inline-size: var(--measure);
+  color: var(--muted);
+}
+
+.s-motion-demo__frame {
+  aspect-ratio: 4 / 5;
+  margin-block: var(--space-7);
+}
+
+.s-motion-demo__picture,
+.s-motion-demo__tile {
+  background: linear-gradient(160deg, var(--bg-alt) 20%, var(--muted));
+}
+
+.s-motion-demo__cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-7) var(--grid-gap);
+}
+
+.s-motion-demo__tile {
+  aspect-ratio: 3 / 4;
+  margin-block-end: var(--space-3);
+}
+
+@media (width >= 1200px) {
+  .s-motion-demo__frame {
+    aspect-ratio: 16 / 9;
+  }
+
+  .s-motion-demo__cards {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

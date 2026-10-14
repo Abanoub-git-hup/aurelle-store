@@ -13,6 +13,7 @@
   {%- if page.url == '/' %}
   {% render 'components/lang-redirect', site: site %}
   {%- endif %}
+  {% render 'components/motion-pending' %}
   {% render 'components/font-preload', lang: lang %}
   <link rel="stylesheet" href="/assets/aurelle.css">
   <script type="module" src="/assets/aurelle.js"></script>

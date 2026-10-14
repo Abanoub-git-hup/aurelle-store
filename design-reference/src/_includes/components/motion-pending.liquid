@@ -1,0 +1,11 @@
+{%- comment -%}
+  Hides elements that are about to animate, so they don't flash before the motion system starts.
+  Set by JS, never by CSS alone: with JS off nothing is hidden, with reduced motion nothing is
+  hidden, and if the bundle never arrives the class is dropped after a few seconds.
+{%- endcomment -%}
+<script>
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('is-motion-pending');
+    setTimeout(function () { document.documentElement.classList.remove('is-motion-pending'); }, 4000);
+  }
+</script>

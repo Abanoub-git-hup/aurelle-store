@@ -40,5 +40,17 @@
     "theHouse": "The House",
     "connect": "Connect",
     "rights": "© 2026 {brand}. All rights reserved."
+  },
+  "category": {
+    "outerwear": "Outerwear",
+    "knitwear": "Knitwear",
+    "dresses": "Dresses",
+    "trousers": "Trousers",
+    "accessories": "Accessories"
+  },
+  "motionDemo": {
+    "eyebrow": "Made by hand",
+    "title": "Worn slowly, kept for years",
+    "text": "Every piece begins as a bolt of undyed wool or linen in a small workshop. It is cut by hand, sewn by the same pair of hands, and pressed only when it is ready — so it can be worn for a decade and still feel like the first morning."
   }
 }

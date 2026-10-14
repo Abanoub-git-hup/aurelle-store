@@ -4,6 +4,11 @@
   font-weight: 400;
   line-height: 1;
   letter-spacing: -0.01em; /* Latin wordmark only — it is never Arabic text */
+
+  /* AURELLE reads left to right on Arabic pages too — essential once its letters are split
+     into separate boxes, which would otherwise be laid out right to left (ELLERUA). */
+  direction: ltr;
+  unicode-bidi: isolate;
 }
 
 .u-display {
