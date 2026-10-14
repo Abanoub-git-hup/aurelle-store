@@ -6,7 +6,7 @@
 متجر أزياء فخم (رجالي + حريمي) ثنائي اللغة EN/AR، يتبني كـ **مرجع موحّد HTML/CSS/JS** الأول، وبعدين يتنقل لـ **WordPress/WooCommerce ← Shopify ← Salla**. دفع تجريبي فقط. السوق مصر (EGP). الاسم AURELLE مؤقت.
 
 - **المسار:** `C:\Users\HP\projects\aurelle-store` (كان `velune-store` واتنقل — الفولدر القديم اتمسح)
-- **GitHub (Public):** https://github.com/Abanoub-git-hup/aurelle-store — فرع `main`، فيه commit واحد بس (الملفات الأحدث لسه مش متعمل لها commit)
+- **GitHub (Public):** https://github.com/Abanoub-git-hup/aurelle-store — فرع `main`، كل الملفات متعمل لها commit ومرفوعة
 
 ## المراجع (ADR-0001)
 | المرجع | الرابط | بناخد منه |
@@ -53,7 +53,6 @@
 - **قرار الخطوة 3** (Claude Design ولا نتخطى للـ Architect).
 - **أسئلة العميل في project.md:** حسابات العملاء، البحث، خدمة النشرة، عملة Salla، نصوص الصفحات القانونية، شارة الخصم، Quick Add بمقاسات، أرقام النجاح، الاسم النهائي.
 - **"As Featured In" / اقتباس Vogue:** مفيش صحافة حقيقية → placeholder أو يتشال.
-- **ملفات مش متعمل لها commit:** project.md، design.md، design_prompt.md، docs/session-summary.md.
 - **صور `assets/prd/`** (لقطات Ctrl Cairo) في repo عام — ممكن تتشال.
 - أرشفة `PLAN.md` و `prd.md` بعد `architecture.md`.
 
