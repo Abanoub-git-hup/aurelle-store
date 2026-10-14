@@ -75,7 +75,8 @@ test.describe('card states (preview page)', () => {
   test('a sold-out product says so and fades its picture', async ({ page }) => {
     const c = card(page, soldOut);
     await expect(c.getByText(t('en', 'card.soldOut'), { exact: true })).toBeVisible();
-    await expect(c.locator('.c-card__img--main')).toHaveCSS('opacity', '0.5');
+    await expect(c.locator('.c-card__media-link')).toHaveCSS('opacity', '0.5');
+    await expect(c.locator('.c-card__img--hover')).toHaveCSS('opacity', '0'); // never shows through
   });
 
   test('one colour: no swatches, the colour is still named', async ({ page }) => {
@@ -107,20 +108,17 @@ test.describe('card states (preview page)', () => {
     ).toHaveText(`+${more}`);
   });
 
-  test('a sold-out colour is marked for screen readers too', async ({ page }) => {
+  test('a sold-out colour is struck through and named as sold out', async ({ page }) => {
+    const isGone = (x: Product, c: Colour) =>
+      x.variants.filter((v) => v.color === c.id).every((v) => v.stock === 0);
+    // A product still on sale whose sold-out colour is among the four swatches shown on the card.
     const p = products.find(
-      (x) =>
-        x.colors.some((c) => x.variants.filter((v) => v.color === c.id).every((v) => v.stock === 0)) &&
-        x.variants.some((v) => v.stock > 0),
+      (x) => x.variants.some((v) => v.stock > 0) && x.colors.slice(0, 4).some((c) => isGone(x, c)),
     )!;
-    const gone = p.colors.find((c) =>
-      p.variants.filter((v) => v.color === c.id).every((v) => v.stock === 0),
-    )!;
-    const index = p.colors.indexOf(gone);
-    test.skip(index >= 4, 'the sold-out colour is behind +N');
-    await expect(
-      card(page, p).getByRole('radio', { name: `${gone.label.en} — ${t('en', 'card.soldOut')}` }),
-    ).toBeVisible();
+    const gone = p.colors.slice(0, 4).find((c) => isGone(p, c))!;
+    const radio = card(page, p).getByRole('radio', { name: `${gone.label.en} — ${t('en', 'card.soldOut')}` });
+    await expect(radio).toBeAttached();
+    await expect(radio.locator('xpath=..')).toHaveClass(/is-unavailable/);
   });
 
   test('pictures keep a fixed 3:4 frame', async ({ page }) => {

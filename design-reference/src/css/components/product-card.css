@@ -66,8 +66,9 @@
   text-transform: none;
 }
 
-/* Sold out — the picture fades back, the badge says so. */
-.is-sold-out .c-card__img {
+/* Sold out — the picture fades back, the badge says so. Faded as a whole frame, so the
+   hidden second picture keeps its own opacity 0 and never shows through. */
+.is-sold-out .c-card__media-link {
   opacity: 0.5;
 }
 
