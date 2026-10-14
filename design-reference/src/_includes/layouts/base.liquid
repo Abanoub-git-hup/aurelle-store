@@ -1,0 +1,28 @@
+{%- assign lang = page.url | lang_of -%}
+<!doctype html>
+<html lang="{{ lang.code }}" dir="{{ lang.dir }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ titleKey | t }}</title>
+  <meta name="description" content="{{ 'meta.description' | t }}">
+  {%- for alt in site.languages %}
+  <link rel="alternate" hreflang="{{ alt.code }}" href="{{ page.url | lang_url: alt.code }}">
+  {%- endfor %}
+  <link rel="alternate" hreflang="x-default" href="{{ page.url | lang_url: site.defaultLang }}">
+  {%- if page.url == '/' %}
+  {% render 'components/lang-redirect', site: site %}
+  {%- endif %}
+  {% render 'components/font-preload', lang: lang %}
+  <link rel="stylesheet" href="/assets/aurelle.css">
+  <script type="module" src="/assets/aurelle.js"></script>
+</head>
+<body>
+  <a class="c-skip-link" href="#main">{{ 'a11y.skip' | t }}</a>
+  {% include 'components/header' %}
+  <main id="main" tabindex="-1">
+    {{ content }}
+  </main>
+  {% include 'components/footer' %}
+</body>
+</html>

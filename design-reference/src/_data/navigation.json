@@ -1,0 +1,46 @@
+{
+  "header": [
+    { "key": "nav.women", "path": "/shop/women/" },
+    { "key": "nav.men", "path": "/shop/men/" },
+    { "key": "nav.collections", "path": "/shop/" },
+    { "key": "nav.journal", "path": "/journal/" },
+    { "key": "nav.about", "path": "/about/" }
+  ],
+  "footer": [
+    {
+      "key": "footer.shop",
+      "links": [
+        { "key": "nav.women", "path": "/shop/women/" },
+        { "key": "nav.men", "path": "/shop/men/" },
+        { "key": "nav.collections", "path": "/shop/" }
+      ]
+    },
+    {
+      "key": "footer.clientCare",
+      "links": [
+        { "key": "nav.shipping", "path": "/pages/shipping/" },
+        { "key": "nav.returns", "path": "/pages/returns/" },
+        { "key": "nav.sizeGuide", "path": "/pages/size-guide/" },
+        { "key": "nav.faq", "path": "/pages/faq/" }
+      ]
+    },
+    {
+      "key": "footer.theHouse",
+      "links": [
+        { "key": "nav.about", "path": "/about/" },
+        { "key": "nav.journal", "path": "/journal/" }
+      ]
+    },
+    {
+      "key": "footer.connect",
+      "links": [
+        { "key": "nav.contact", "path": "/contact/" },
+        { "key": "nav.ateliers", "path": "/contact/" }
+      ]
+    }
+  ],
+  "legal": [
+    { "key": "nav.privacy", "path": "/pages/privacy/" },
+    { "key": "nav.terms", "path": "/pages/terms/" }
+  ]
+}

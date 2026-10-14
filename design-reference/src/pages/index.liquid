@@ -1,0 +1,18 @@
+---
+pagination:
+  data: site.languages
+  size: 1
+  alias: language
+permalink: "{{ language.prefix }}/"
+layout: layouts/base.liquid
+titleKey: meta.homeTitle
+---
+{%- comment -%} Temporary intro — the Salon replaces it (Salon ticket). {%- endcomment -%}
+<section class="s-intro">
+  <div class="s-intro__inner u-container">
+    <p class="u-eyebrow">{{ 'intro.eyebrow' | t }}</p>
+    <h1 class="s-intro__word c-wordmark">{{ site.brand }}</h1>
+    <p class="s-intro__tagline u-display">{{ 'intro.tagline' | t }}</p>
+    <a class="c-button" href="{{ '/shop/women/' | lurl }}">{{ 'intro.cta' | t }} <span class="c-arrow" aria-hidden="true">⟶</span></a>
+  </div>
+</section>

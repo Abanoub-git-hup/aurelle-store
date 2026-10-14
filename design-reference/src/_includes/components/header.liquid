@@ -1,0 +1,24 @@
+{%- comment -%}
+  Header — links (start) · wordmark (centre) · actions (end).
+  Search and account icons are hidden until their scope is decided (architecture.md, Open #3–#4).
+  The mobile ☰ menu arrives with the navigation ticket; until then small screens keep the wordmark,
+  the language switch and the Bag.
+{%- endcomment -%}
+<header class="c-header">
+  <div class="c-header__inner u-container">
+    <nav class="c-header__nav" aria-label="{{ 'a11y.mainNav' | t }}">
+      <ul class="c-header__links">
+        {%- for item in navigation.header %}
+        <li><a class="c-header__link" href="{{ item.path | lurl }}">{{ item.key | t }}</a></li>
+        {%- endfor %}
+      </ul>
+    </nav>
+    <a class="c-header__wordmark c-wordmark" href="{{ '/' | lurl }}" aria-label="{{ 'a11y.home' | t }}">{{ site.brand }}</a>
+    <div class="c-header__actions">
+      {% include 'components/lang-switch' %}
+      <a class="c-header__bag" href="{{ '/bag/' | lurl }}" data-cart-toggle>
+        {{ 'header.bag' | t }} (<span data-cart-count>{{ 0 | num }}</span>)
+      </a>
+    </div>
+  </div>
+</header>

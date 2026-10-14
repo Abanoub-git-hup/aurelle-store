@@ -1,0 +1,26 @@
+{
+  "brand": "AURELLE",
+  "currency": "EGP",
+  "defaultLang": "en",
+  "storageKeys": {
+    "lang": "aurelle.lang"
+  },
+  "languages": [
+    {
+      "code": "en",
+      "dir": "ltr",
+      "prefix": "",
+      "label": "EN",
+      "name": "English",
+      "numberLocale": "en-US"
+    },
+    {
+      "code": "ar",
+      "dir": "rtl",
+      "prefix": "/ar",
+      "label": "ع",
+      "name": "العربية",
+      "numberLocale": "ar-EG"
+    }
+  ]
+}

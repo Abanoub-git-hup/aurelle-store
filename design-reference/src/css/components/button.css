@@ -1,0 +1,40 @@
+/* Button — primary: a capsule; ink on light, cream on dark. Hover swaps the colours. */
+.c-button {
+  display: inline-flex;
+  gap: var(--space-3);
+  align-items: center;
+  justify-content: center;
+  min-block-size: 48px;
+  padding-inline: var(--space-6);
+  font-size: var(--size-button);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--bg);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-button);
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  transition:
+    color var(--duration-base) var(--ease-out),
+    background-color var(--duration-base) var(--ease-out);
+}
+
+.c-button:hover {
+  color: var(--ink);
+  background: transparent;
+}
+
+[dir='rtl'] .c-button {
+  font-size: var(--size-small);
+  text-transform: none;
+}
+
+/* ⟶ follows the reading direction. */
+.c-arrow {
+  display: inline-block;
+}
+
+[dir='rtl'] .c-arrow {
+  transform: scaleX(-1);
+}

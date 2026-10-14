@@ -1,0 +1,18 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "plugins": ["stylelint-use-logical"],
+  "rules": {
+    "csstools/use-logical": ["always", { "except": ["float"] }],
+    "selector-class-pattern": [
+      "^[a-z][a-z0-9]*(-[a-z0-9]+)*(__[a-z0-9]+(-[a-z0-9]+)*)?(--[a-z0-9]+(-[a-z0-9]+)*)?$",
+      { "message": "Use BEM with a prefix: c-block__element--modifier, s-, u-, is-, has-" }
+    ],
+    "font-family-name-quotes": null
+  },
+  "overrides": [
+    {
+      "files": ["src/css/components/**/*.css", "src/css/sections/**/*.css"],
+      "rules": { "color-no-hex": true, "color-named": "never" }
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "homeTitle": "{brand} — A quieter luxury",
+    "description": "Natural fibres, made slowly to be worn for years. Womenswear and menswear by {brand}."
+  },
+  "a11y": {
+    "skip": "Skip to content",
+    "home": "{brand}, home",
+    "mainNav": "Main",
+    "footerNav": "Footer",
+    "language": "Language"
+  },
+  "nav": {
+    "women": "Women",
+    "men": "Men",
+    "collections": "Collections",
+    "journal": "Journal",
+    "about": "About",
+    "shipping": "Shipping",
+    "returns": "Returns",
+    "sizeGuide": "Size Guide",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "ateliers": "Ateliers — by appointment",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  },
+  "header": {
+    "bag": "Bag"
+  },
+  "intro": {
+    "eyebrow": "Autumn — Winter 2026",
+    "tagline": "A quieter luxury, made to last a lifetime.",
+    "cta": "Discover the collection"
+  },
+  "footer": {
+    "tagline": "Natural fibres, cut with patience and made to be kept.",
+    "shop": "Shop",
+    "clientCare": "Client Care",
+    "theHouse": "The House",
+    "connect": "Connect",
+    "rights": "© 2026 {brand}. All rights reserved."
+  }
+}

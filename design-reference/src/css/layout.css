@@ -1,0 +1,15 @@
+.u-container {
+  inline-size: 100%;
+  max-inline-size: var(--content-max);
+  padding-inline: var(--gutter);
+  margin-inline: auto;
+}
+
+.u-visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(50%);
+}

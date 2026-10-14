@@ -1,0 +1,102 @@
+/* Header — design.md → Components → Header. Cream with dark text; the transparent-over-Salon
+   state arrives with the Salon. */
+.c-header {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 50;
+  color: var(--ink);
+  background: var(--bg);
+  border-block-end: 1px solid var(--line);
+}
+
+.c-header__inner {
+  display: grid;
+  grid-template-columns: 1fr auto; /* phones: wordmark at the start, actions at the end */
+  gap: var(--space-4);
+  align-items: center;
+  block-size: var(--header-height);
+}
+
+.c-header__nav {
+  display: none;
+}
+
+.c-header__links {
+  display: flex;
+  gap: var(--space-6);
+}
+
+.c-header__link,
+.c-header__bag {
+  font-size: var(--size-button);
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-button);
+}
+
+.c-header__link {
+  padding-block: var(--space-2);
+  background: linear-gradient(currentcolor, currentcolor) no-repeat 0 100% / 0 1px;
+  transition: background-size var(--duration-base) var(--ease-out);
+}
+
+.c-header__link:hover {
+  background-size: 100% 1px;
+}
+
+[dir='rtl'] .c-header__link {
+  background-position: 100% 100%;
+}
+
+.c-header__wordmark {
+  font-size: 1.5rem;
+}
+
+.c-header__actions {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.c-header__bag {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 44px;
+  white-space: nowrap;
+}
+
+[dir='rtl'] .c-header__link,
+[dir='rtl'] .c-header__bag {
+  font-size: var(--size-small);
+  text-transform: none;
+}
+
+/* From tablet up the wordmark sits in the centre. */
+@media (width >= 768px) {
+  .c-header__inner {
+    grid-template-columns: 1fr auto 1fr;
+    gap: var(--space-5);
+  }
+
+  .c-header__wordmark {
+    grid-column: 2;
+    font-size: 1.625rem;
+  }
+
+  .c-header__actions {
+    grid-column: 3;
+    gap: var(--space-5);
+  }
+}
+
+@media (width >= 1200px) {
+  .c-header__nav {
+    display: block;
+  }
+
+  .c-header__wordmark {
+    font-size: 2rem;
+  }
+}

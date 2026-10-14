@@ -1,0 +1,12 @@
+{%- comment -%}
+  Only on the English home page. A visitor who chose Arabic before and lands on `/`
+  goes to `/ar/` before anything paints. Choosing English saves "en", so this never loops.
+{%- endcomment -%}
+<script>
+  try {
+    var saved = localStorage.getItem('{{ site.storageKeys.lang }}');
+    {%- for l in site.languages %}{% if l.prefix != '' %}
+    if (saved === '{{ l.code }}') location.replace('{{ l.prefix }}/' + location.search + location.hash);
+    {%- endif %}{% endfor %}
+  } catch (e) {}
+</script>

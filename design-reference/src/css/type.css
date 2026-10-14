@@ -1,0 +1,55 @@
+/* Text styles — design.md → Typography. */
+.c-wordmark {
+  font-family: var(--font-wordmark);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.01em; /* Latin wordmark only — it is never Arabic text */
+}
+
+.u-display {
+  font-family: var(--font-display);
+  font-size: var(--size-display);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: var(--tracking-display);
+}
+
+.u-h2 {
+  font-family: var(--font-display);
+  font-size: var(--size-h2);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.u-h3 {
+  font-family: var(--font-display);
+  font-size: var(--size-h3);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.u-eyebrow {
+  font-size: var(--size-eyebrow);
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+}
+
+.u-small {
+  font-size: var(--size-small);
+  font-weight: 500;
+}
+
+[dir='rtl'] .u-display,
+[dir='rtl'] .u-h2,
+[dir='rtl'] .u-h3 {
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+[dir='rtl'] .u-eyebrow {
+  font-weight: 500;
+  text-transform: none;
+}

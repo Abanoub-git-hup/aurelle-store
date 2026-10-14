@@ -1,0 +1,21 @@
+/* Temporary home intro — replaced by the Salon. */
+.s-intro {
+  padding-block: var(--space-10);
+  text-align: center;
+}
+
+.s-intro__inner {
+  display: grid;
+  gap: var(--space-5);
+  justify-items: center;
+}
+
+.s-intro__word {
+  font-size: var(--size-wordmark);
+}
+
+.s-intro__tagline {
+  max-inline-size: 18ch;
+  margin-block-end: var(--space-4);
+  font-size: var(--size-h2);
+}

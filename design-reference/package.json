@@ -1,0 +1,34 @@
+{
+  "name": "aurelle-design-reference",
+  "version": "1.0.0",
+  "description": "AURELLE Design Reference — the single source of truth ported to WooCommerce, Shopify and Salla",
+  "scripts": {
+    "dev": "run-p dev:*",
+    "dev:assets": "node esbuild.config.mjs --watch",
+    "dev:site": "eleventy --serve --port=8080",
+    "build": "node esbuild.config.mjs && eleventy",
+    "lint": "eslint . && stylelint \"src/css/**/*.css\" && prettier --check \"**/*.{js,mjs,ts,css,json}\"",
+    "format": "prettier --write \"**/*.{js,mjs,ts,css,json}\"",
+    "test": "playwright test",
+    "check": "npm run lint && npm run build && npm run test"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6",
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.64.1",
+    "esbuild": "^0.28.2",
+    "eslint": "^10.12.0",
+    "globals": "^17.13.0",
+    "npm-run-all2": "^9.0.3",
+    "prettier": "^3.9.10",
+    "serve": "^14.2.6",
+    "stylelint": "^17.16.0",
+    "stylelint-config-standard": "^40.0.0",
+    "stylelint-use-logical": "^2.1.3"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  }
+}

@@ -1,0 +1,33 @@
+{%- comment -%}
+  Footer — ink. Brand + tagline · four link columns · rights + legal · the huge wordmark cut off at the bottom.
+  The newsletter field and the scroll-driven wordmark (M13) arrive with their own tickets.
+{%- endcomment -%}
+<footer class="c-footer">
+  <div class="c-footer__inner u-container">
+    <div class="c-footer__brand">
+      <p class="c-footer__name c-wordmark">{{ site.brand }}</p>
+      <p class="c-footer__tagline">{{ 'footer.tagline' | t }}</p>
+    </div>
+    <nav class="c-footer__nav" aria-label="{{ 'a11y.footerNav' | t }}">
+      {%- for column in navigation.footer %}
+      <div class="c-footer__column">
+        <h2 class="c-footer__heading u-eyebrow">{{ column.key | t }}</h2>
+        <ul class="c-footer__links">
+          {%- for item in column.links %}
+          <li><a class="c-footer__link" href="{{ item.path | lurl }}">{{ item.key | t }}</a></li>
+          {%- endfor %}
+        </ul>
+      </div>
+      {%- endfor %}
+    </nav>
+    <div class="c-footer__bar">
+      <p>{{ 'footer.rights' | t }}</p>
+      <ul class="c-footer__legal">
+        {%- for item in navigation.legal %}
+        <li><a class="c-footer__link" href="{{ item.path | lurl }}">{{ item.key | t }}</a></li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+  <p class="c-footer__word c-wordmark" aria-hidden="true">{{ site.brand }}</p>
+</footer>

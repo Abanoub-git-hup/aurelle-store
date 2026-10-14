@@ -1,0 +1,8 @@
+{%- comment -%} Preload the two faces the first screen needs: display + body for this language. {%- endcomment -%}
+{%- if lang.code == 'ar' %}
+<link rel="preload" href="/assets/el-messiri-arabic-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/ibm-plex-sans-arabic-arabic-400.woff2" as="font" type="font/woff2" crossorigin>
+{%- else %}
+<link rel="preload" href="/assets/bodoni-moda-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/satoshi-400.woff2" as="font" type="font/woff2" crossorigin>
+{%- endif %}

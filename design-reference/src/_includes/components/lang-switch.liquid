@@ -1,0 +1,9 @@
+{%- comment -%} EN · ع — each link goes to the same page in that language; the active one is underlined. {%- endcomment -%}
+{%- assign current = page.url | lang_of -%}
+<nav class="c-lang-switch" aria-label="{{ 'a11y.language' | t }}" data-component="lang-switch">
+  {%- for l in site.languages %}
+  {%- unless forloop.first %}<span class="c-lang-switch__sep" aria-hidden="true">·</span>{% endunless %}
+  <a class="c-lang-switch__link" href="{{ page.url | lang_url: l.code }}" hreflang="{{ l.code }}" lang="{{ l.code }}"
+     aria-label="{{ l.name }}" data-lang="{{ l.code }}"{% if l.code == current.code %} aria-current="true"{% endif %}>{{ l.label }}</a>
+  {%- endfor %}
+</nav>
