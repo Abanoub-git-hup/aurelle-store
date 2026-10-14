@@ -23,6 +23,7 @@
 | `design_prompt.md` | برومبت Claude Design (إنجليزي) | ✅ |
 | `GLOSSARY.md` | المصطلحات (Salon، Look، Shop the Look، Bag، Department، Category …) | ✅ |
 | `docs/adr/0001-…` | قرار AURELLE + Ombrine + VÉLUNE | ✅ |
+| `architecture.md` | المعمارية + Features F1–F14 (Agency Architect) | ✅ |
 | `PLAN.md` | الخطة القديمة + **جدول الـ 24 قرار (Q1–Q24)** | مؤقت — يتأرشف في `docs/archive/` بعد `architecture.md` |
 | `prd.md` | سلوك كرت المنتج (swatches، hover، Quick View/Add) | مؤقت — ألوانه في §6 قديمة (VÉLUNE)؛ السلوك صالح |
 | `prototypes/salon-hero.html` | نموذج أولي للـ Salon | يتنقل للمرجع بتوكنز AURELLE |
@@ -41,16 +42,17 @@
 ## الـ Workflow (Agency بأدوار)
 1. ✅ **PM** → `project.md`
 2. ✅ **UI/UX Designer** → `design.md` + `design_prompt.md`
-3. ⏸ **Claude Design** — مستني قرار: نعملها ولا نتخطاها؟ (التوصية: نتخطاها، لأن الحركة أولوية والمرجع HTML هو التصميم)
-4. ⏭ **Architect** (النسخة المعدّلة `agency-software-architect` من غير `anthropic-skills:`) → `architecture.md` بس، وبعدين المستخدم يبعت **`/to-tickets architecture.md`**
+3. ⏭ **Claude Design** — **اتخطّت** (قرار المستخدم 2026-10-14): الحركة أولوية، والـ Design Reference نفسه هو التصميم. `design_prompt.md` مش مستخدم.
+4. ✅ **Architect** → `architecture.md`: Eleventy 3 + Liquid + vanilla JS (esbuild) + GSAP/Lenis + Playwright · اللغة في الـ URL (`/` و `/ar/`) · `CartAdapter` و `ProductSource` عشان الـ Ports · Features F1–F14. ✅ `/to-tickets` اتعمل: **18 تذكرة على GitHub (#1–#18)** بعلاقات blocked-by native. #1 و #18 (صور، `ready-for-human`) يبدأوا على طول؛ الباقي `ready-for-agent`. الافتراضات اللي اتوافق عليها: Playwright، أيقونات الحساب/البحث مخفية، Quick View بترجع تتفتح بعد تبديل اللغة (`#qv=`)، شحن بأسعار وهمية.
 5. **Fullstack** (النسخة المعدّلة) → تذكرة تذكرة من GitHub، ويقف بعد كل تذكرة
 6. **QA** → 7. **DevOps**
 
+- **الخطوة الجاية:** Fullstack يبدأ بتذكرة **#1**.
 - `/to-spec` **مش مستخدم** في الـ workflow ده (project.md + architecture.md بيغطّوه).
 - تقسيم تذاكر مبدئي اتعتمد (17 تذكرة: 16 vertical slice + تذكرة صور الـ stock) — `/to-tickets` هيعيد بناءه من `architecture.md`.
 
 ## مفتوح
-- **قرار الخطوة 3** (Claude Design ولا نتخطى للـ Architect).
+- **أسئلة `architecture.md` المفتوحة:** اتحسم منها #1 و#2 و#3 و#4 و#7 بالمقترح. لسه مفتوح: مسار ثيم Edblad (#5)، و Salla (#6)، والصحافة (#8).
 - **أسئلة العميل في project.md:** حسابات العملاء، البحث، خدمة النشرة، عملة Salla، نصوص الصفحات القانونية، شارة الخصم، Quick Add بمقاسات، أرقام النجاح، الاسم النهائي.
 - **"As Featured In" / اقتباس Vogue:** مفيش صحافة حقيقية → placeholder أو يتشال.
 - **صور `assets/prd/`** (لقطات Ctrl Cairo) في repo عام — ممكن تتشال.
