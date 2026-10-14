@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AURELLE — Salon Hero (prototype)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Manrope:wght@400;500&family=Amiri&family=IBM+Plex+Sans+Arabic:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Prototype: "salon of looks" hero for VÉLUNE — inspired by the Ombrine idea, built from scratch.
+   Placeholder figures are generated SVGs; swap for real cut-out PNGs later. */
+:root{
+  --bg:#0E0E0E; --bg-2:#161616; --fg:#FFFFFF; --muted:#CCCCCC; --line:rgba(255,255,255,.15);
+  --cream:#efe9df;
+  --ease:cubic-bezier(.44,0,.56,1);
+  --gutter:24px;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Manrope',system-ui,sans-serif;
+}
+[dir="rtl"]{ --serif:'Amiri',serif; --sans:'IBM Plex Sans Arabic',system-ui,sans-serif; }
+*{box-sizing:border-box;margin:0}
+html,body{background:var(--bg);color:var(--fg);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+ul{list-style:none;padding:0}
+[dir="rtl"] .arr{display:inline-block;transform:scaleX(-1)}
+
+/* ---------- hero stage ---------- */
+.hero{
+  position:relative;height:100svh;min-height:560px;overflow:hidden;
+  cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none;
+  background:
+    radial-gradient(ellipse 55% 38% at 50% 68%, #2b231c 0%, #18140f 45%, transparent 78%),
+    radial-gradient(ellipse 80% 50% at 50% 20%, #141210 0%, var(--bg) 70%);
+}
+.hero.dragging{cursor:grabbing}
+.hero.lv-open{cursor:default}
+.hero::after{ /* floor fade into the page */
+  content:"";position:absolute;inset:auto 0 0 0;height:18%;pointer-events:none;z-index:5;
+  background:linear-gradient(to bottom,transparent,var(--bg));
+}
+/* geometry of .world never changes (filter only) so the FLIP return lands exactly where it started */
+.world{position:absolute;inset:0;transition:filter 1s var(--ease)}
+.hero.lv-open .world{filter:blur(14px) brightness(.42)}
+.layer{position:absolute;inset:0;pointer-events:none}
+.look{
+  position:absolute;left:50%;bottom:var(--y);width:var(--w);margin-left:calc(var(--w) / -2);
+  aspect-ratio:120/340;will-change:transform;transform-origin:50% 100%;
+}
+.look svg{display:block;width:100%;height:100%;overflow:visible}
+.look.away{visibility:hidden}
+
+/* 4 rows measured from the reference composition (figure height = w × 2.83, all tied to svh):
+   front  ~2 on screen, huge + blurred, only the upper body shows (feet far below the fold)
+   main   ~7 on screen, ≈38% of the height, feet at 22%  ← the hero of the hero
+   back   ~8 on screen, ≈23% of the height, feet at 63% (just above the main row's heads)
+   far    ~9 on screen, ≈14% of the height, faint, peeking between the back row */
+.layer.far   .look{--w:min(3.4vw,4.9svh);--y:75%;filter:blur(2.4px) brightness(.4)}
+.layer.back  .look{--w:min(5.2vw,8.1svh);--y:63%;filter:blur(1.1px) brightness(.68)}
+.layer.mid   .look{--w:min(8.4vw,13.4svh);--y:22%;pointer-events:auto;cursor:pointer}
+.layer.front .look{--w:min(22vw,31svh);--y:-46%;filter:blur(8px) brightness(.8)}
+.layer.mid .look:focus-visible{outline:1px solid var(--muted);outline-offset:8px;border-radius:2px}
+
+/* hover on a main look: zoom + spotlight + "View" disc + name/price */
+.look .fig{display:block;height:100%;transform-origin:50% 100%;transition:transform .6s var(--ease),filter .6s var(--ease)}
+.look .glow{
+  position:absolute;left:50%;bottom:-4%;width:260%;aspect-ratio:1/1.15;transform:translateX(-50%);z-index:-1;
+  background:radial-gradient(ellipse 50% 50% at 50% 55%,rgba(255,226,190,.20),rgba(255,226,190,.06) 45%,transparent 70%);
+  opacity:0;transition:opacity .6s var(--ease);pointer-events:none;
+}
+.look .view{
+  position:absolute;left:var(--mx,50%);top:var(--my,55%);width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:50%;
+  display:grid;place-items:center;background:var(--cream);color:#111;font-size:11px;letter-spacing:.04em;
+  transform:scale(.4);opacity:0;transition:transform .45s var(--ease),opacity .3s var(--ease);pointer-events:none;
+}
+.look .meta{
+  position:absolute;top:calc(100% + 10px);left:50%;transform:translate(-50%,6px);white-space:nowrap;text-align:center;
+  opacity:0;transition:opacity .4s var(--ease),transform .4s var(--ease);pointer-events:none;
+}
+.look .meta em{display:block;font-family:var(--serif);font-size:15px;color:var(--fg)}
+.look .meta small{display:block;margin-top:4px;font-size:10px;letter-spacing:.06em;color:var(--muted);font-variant-numeric:tabular-nums}
+@media (hover:hover){
+  .hero:not(.dragging):not(.lv-open) .layer.mid .look:not(.away):hover{z-index:2}
+  .hero:not(.dragging):not(.lv-open) .layer.mid .look:not(.away):hover .fig{transform:scale(1.14);filter:brightness(1.18) contrast(1.04)}
+  .hero:not(.dragging):not(.lv-open) .layer.mid .look:not(.away):hover .glow{opacity:1}
+  .hero:not(.dragging):not(.lv-open) .layer.mid .look:not(.away):hover .view{transform:scale(1);opacity:1}
+  .hero:not(.dragging):not(.lv-open) .layer.mid .look:not(.away):hover .meta{opacity:1;transform:translate(-50%,0)}
+}
+
+/* ---------- UI chrome ---------- */
+.ui{position:absolute;z-index:10;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+[dir="rtl"] .ui{letter-spacing:0;font-size:13px}
+.top{z-index:20;top:var(--gutter);inset-inline:var(--gutter);display:flex;justify-content:space-between;align-items:center}
+.top .group{display:flex;gap:20px;align-items:center}
+.brand{position:absolute;left:50%;transform:translateX(-50%);font-family:'Playfair Display',serif;font-size:20px;letter-spacing:.32em;text-transform:none;color:var(--fg)}
+.top button:hover,.top button:focus-visible{color:var(--fg)}
+.bottom{bottom:var(--gutter);inset-inline:var(--gutter);display:grid;grid-template-columns:1fr auto 1fr;align-items:end;gap:16px;transition:opacity .4s var(--ease)}
+.hero.lv-open .bottom{opacity:0;pointer-events:none}
+.bottom .caption{font-family:var(--serif);font-style:italic;text-transform:none;letter-spacing:0;font-size:14px;color:var(--fg)}
+.bottom .hint{text-align:center;opacity:.7}
+.bottom .count{justify-self:end;font-variant-numeric:tabular-nums}
+
+/* ---------- look view ("step closer") ---------- */
+.lv{
+  position:absolute;inset:0;z-index:15;
+  display:grid;grid-template-columns:minmax(0,1fr) auto minmax(300px,350px);grid-template-rows:minmax(0,1fr);gap:40px;
+  padding:76px var(--gutter) var(--gutter);
+  visibility:hidden;pointer-events:none;transition:visibility 0s linear .6s;
+}
+.hero.lv-open .lv{visibility:visible;pointer-events:auto;transition-delay:0s}
+.lv-info,.lv-panel{opacity:0;transition:opacity .35s var(--ease),transform .35s var(--ease)}
+.lv-info{transform:translateY(12px)}
+.lv-panel{--dx:24px;transform:translateX(var(--dx))}
+[dir="rtl"] .lv-panel{--dx:-24px}
+.hero.lv-open .lv-info{opacity:1;transform:none;transition-duration:.6s;transition-delay:.55s}
+.hero.lv-open .lv-panel{opacity:1;transform:none;transition-duration:.6s;transition-delay:.45s}
+
+.lv-info{display:flex;flex-direction:column;justify-content:space-between;padding:28px 0 4px 16px;min-width:0}
+[dir="rtl"] .lv-info{padding:28px 16px 4px 0}
+.lv-info h2{font-family:var(--serif);font-weight:400;font-style:italic;font-size:clamp(32px,3.2vw,44px);line-height:1.1}
+.lv-info p{margin-top:16px;max-width:250px;font-size:13px;line-height:1.6;color:var(--muted)}
+.lv-link{margin-top:16px;font-size:12px;padding-bottom:3px;border-bottom:1px solid var(--muted);display:inline-flex;gap:6px}
+.lv-link:hover{border-color:var(--fg)}
+.lv-pager{display:flex;align-items:center;gap:22px;font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.lv-pager button{display:inline-flex;align-items:baseline;gap:8px;color:var(--muted);transition:color .3s var(--ease)}
+.lv-pager button:hover{color:var(--fg)}
+.lv-pager em{font-family:var(--serif);font-size:14px;color:var(--fg)}
+
+.lv-slot{position:relative;height:min(calc(100svh - 110px),760px);aspect-ratio:120/340;align-self:end;justify-self:center}
+.lv-slot svg{display:block;width:100%;height:100%;overflow:visible}
+.lv-slot::before{
+  content:"";position:absolute;inset:-6% -90%;z-index:-1;pointer-events:none;
+  background:radial-gradient(ellipse 45% 50% at 50% 60%,rgba(255,226,190,.13),transparent 70%);
+  opacity:0;transition:opacity .8s var(--ease);
+}
+.hero.lv-open .lv-slot::before{opacity:1;transition-delay:.4s}
+.lv-fly{position:absolute;z-index:16;left:0;top:0;transform-origin:0 0;pointer-events:none;display:none;will-change:transform}
+.lv-fly svg{display:block;width:100%;height:100%;overflow:visible}
+
+.lv-panel{
+  align-self:stretch;min-height:0;overflow:auto;display:flex;flex-direction:column;gap:14px;padding:20px;
+  background:rgba(16,16,16,.78);border:1px solid var(--line);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+}
+.lv-head{display:flex;justify-content:space-between;align-items:center}
+.lv-head em{font-family:var(--serif);font-size:15px}
+.lv-head button{font-size:12px;display:inline-flex;gap:8px;align-items:center;color:var(--muted)}
+.lv-head button:hover{color:var(--fg)}
+.lv-preview{flex:0 0 auto;aspect-ratio:16/10;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 55%,rgba(255,255,255,.05),rgba(255,255,255,.015) 70%)}
+.lv-preview svg{height:72%;width:auto}
+.lv-pieces li + li{border-top:1px solid var(--line)}
+.lv-pieces button{width:100%;display:grid;grid-template-columns:38px 1fr auto;align-items:center;gap:12px;padding:10px 0;text-align:start;opacity:.42;transition:opacity .3s var(--ease)}
+.lv-pieces button:hover{opacity:.75}
+.lv-pieces button[aria-pressed="true"]{opacity:1}
+.lv-pieces svg{width:38px;height:38px}
+.lv-pieces .nm{font-family:var(--serif);font-size:16px}
+.lv-pieces .pr{font-size:12px;font-variant-numeric:tabular-nums}
+.lv-sizes{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.lv-sizes button{min-width:36px;height:32px;padding:0 6px;border:1px solid var(--line);font-size:11px;font-variant-numeric:tabular-nums;transition:background .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease)}
+.lv-sizes button:hover{border-color:var(--muted)}
+.lv-sizes button[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.lv-sizes .guide{margin-inline-start:auto;border:0;min-width:0;font-size:11px;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.lv-cta{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;font-size:12px;border:1px solid var(--line);transition:background .3s var(--ease),color .3s var(--ease)}
+.lv-cta.solid{background:var(--cream);color:#111;border-color:var(--cream)}
+.lv-cta.solid:hover{background:var(--fg)}
+.lv-cta:not(.solid):hover{background:rgba(255,255,255,.06)}
+.lv-note{font-size:11px;color:var(--muted);line-height:1.5}
+
+.toast{
+  position:fixed;z-index:30;left:50%;bottom:72px;transform:translate(-50%,10px);
+  padding:10px 16px;font-size:12px;background:var(--fg);color:var(--bg);
+  opacity:0;pointer-events:none;transition:opacity .35s var(--ease),transform .35s var(--ease)
+}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* placeholder for the rest of the store (shows the salon is only the hero) */
+.next{padding:96px var(--gutter);max-width:720px;margin:0 auto;text-align:center;color:var(--muted)}
+.next h3{font-family:var(--serif);font-weight:400;color:var(--fg);font-size:26px;margin-bottom:10px}
+.next p{font-size:14px;line-height:1.7}
+
+@media (max-width:1024px){
+  .lv{grid-template-columns:minmax(0,1fr) auto minmax(280px,320px);gap:24px}
+}
+@media (max-width:767px){
+  .layer.front{display:none}
+  .layer.mid  .look{--w:min(24vw,13.4svh);--y:22%}
+  .layer.back .look{--w:min(14vw,8.1svh);--y:61%}
+  .layer.far  .look{--w:min(9vw,4.9svh);--y:73%}
+  .bottom{grid-template-columns:1fr auto}
+  .bottom .hint{display:none}
+  .top .group .hide-sm{display:none}
+  /* look view becomes one scrolling column: figure → text → pieces */
+  .lv{grid-template-columns:1fr;grid-template-rows:none;align-content:start;gap:24px;overflow-y:auto;padding-top:68px}
+  .lv-slot{order:-1;height:54svh}
+  .lv-info{padding:0;gap:24px}
+  .lv-panel{align-self:start;overflow:visible}
+}
+@media (prefers-reduced-motion:reduce){
+  .world,.lv,.lv-info,.lv-panel,.lv-slot::before,.toast,.look .fig,.look .glow,.look .view,.look .meta{transition:none !important}
+}
+</style>
+</head>
+<body>
+
+<section class="hero" id="hero" aria-label="Season looks">
+  <div class="world" id="world">
+    <div class="layer far" id="layer-far" aria-hidden="true"></div>
+    <div class="layer back" id="layer-back" aria-hidden="true"></div>
+    <div class="layer mid" id="layer-mid"></div>
+    <div class="layer front" id="layer-front" aria-hidden="true"></div>
+  </div>
+
+  <header class="ui top">
+    <div class="group">
+      <button type="button" data-i18n="menu">Menu</button>
+      <button type="button" class="hide-sm" data-i18n="collection">Collection</button>
+    </div>
+    <span class="brand">VÉLUNE</span>
+    <div class="group">
+      <button type="button" id="lang" aria-label="Switch language">عربي</button>
+      <button type="button" id="bag"><span data-i18n="bag">Bag</span> (<span id="bag-count">0</span>)</button>
+    </div>
+  </header>
+
+  <footer class="ui bottom">
+    <span class="caption" data-i18n="caption">Autumn / Winter 26 — nine looks in silk &amp; linen</span>
+    <span class="hint" data-i18n="hint">Drag to explore · Select a look</span>
+    <span class="count" id="count">01 / 09</span>
+  </footer>
+
+  <!-- look view: opened by clicking a main look; the figure flies in (FLIP) and back out -->
+  <div class="lv" id="lv" role="dialog" aria-modal="true" aria-labelledby="lv-name" aria-hidden="true">
+    <div class="lv-info">
+      <div class="lv-text" id="lv-text">
+        <h2 id="lv-name"></h2>
+        <p id="lv-desc"></p>
+        <button type="button" class="lv-link" id="lv-page"><span data-i18n="viewPage">View the look page</span><span class="arr">→</span></button>
+      </div>
+      <nav class="lv-pager" aria-label="Looks">
+        <button type="button" id="lv-prev"><span class="arr">←</span><em id="lv-prev-name"></em><small id="lv-prev-n"></small></button>
+        <span id="lv-pos"></span>
+        <button type="button" id="lv-next"><small id="lv-next-n"></small><em id="lv-next-name"></em><span class="arr">→</span></button>
+      </nav>
+    </div>
+    <div class="lv-slot" id="lv-slot"></div>
+    <aside class="lv-panel">
+      <div class="lv-head">
+        <em id="lv-count"></em>
+        <button type="button" id="lv-close"><span data-i18n="close">Close</span><span aria-hidden="true">×</span></button>
+      </div>
+      <div class="lv-preview" id="lv-preview"></div>
+      <ul class="lv-pieces" id="lv-pieces"></ul>
+      <div class="lv-sizes" id="lv-sizes"></div>
+      <button type="button" class="lv-cta solid" id="lv-add"><span data-i18n="addToBag">Add to bag</span><span id="lv-add-price"></span></button>
+      <button type="button" class="lv-cta" id="lv-full"><span data-i18n="addFull">Add the full look</span><span id="lv-full-price"></span></button>
+      <p class="lv-note" data-i18n="note"></p>
+    </aside>
+  </div>
+  <div class="lv-fly" id="lv-fly" aria-hidden="true"></div>
+</section>
+
+<section class="next">
+  <h3 data-i18n="nextTitle">The Season Edit</h3>
+  <p data-i18n="nextBody"></p>
+</section>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const FLY_MS = reduce ? 1 : 1050, FLY_EASE = 'cubic-bezier(.76,0,.24,1)';
+
+  /* ---------- i18n ---------- */
+  const T = {
+    en:{menu:'Menu',collection:'Collection',bag:'Bag',view:'View',look:'Look',cur:'EGP',lang:'عربي',
+        caption:'Autumn / Winter 26 — nine looks in silk & linen',hint:'Drag to explore · Select a look',
+        nextTitle:'The Season Edit',nextBody:'The rest of the store continues here as planned — Season Edit, Best Sellers, Editorial, Testimonials. The salon is the hero only.',
+        viewPage:'View the look page',close:'Close',sizeGuide:'Size guide',addToBag:'Add to bag',addFull:'Add the full look',
+        two:'Two pieces',three:'Three pieces',note:'Complimentary delivery and returns across Egypt. Cut and finished in our Cairo atelier.',
+        pickSize:'Choose a size first',added:'Added to bag — ',addedFull:'Full look added — ',pageToast:'The full look page opens here (product.html)',guideToast:'Size guide opens here'},
+    ar:{menu:'القائمة',collection:'المجموعة',bag:'الحقيبة',view:'عرض',look:'إطلالة',cur:'ج.م',lang:'EN',
+        caption:'خريف / شتاء ٢٦ — تسع إطلالات من الحرير والكتان',hint:'اسحب للتجوّل · اختر إطلالة',
+        nextTitle:'مختارات الموسم',nextBody:'باقي المتجر يكمل هنا كما في الخطة — مختارات الموسم، الأكثر مبيعًا، الافتتاحية، آراء العملاء. الصالون هو الهيرو فقط.',
+        viewPage:'صفحة الإطلالة',close:'إغلاق',sizeGuide:'دليل المقاسات',addToBag:'أضف للحقيبة',addFull:'أضف الإطلالة كاملة',
+        two:'قطعتان',three:'ثلاث قطع',note:'توصيل واسترجاع مجاني داخل مصر. تُقصّ وتُشطَّب في أتيليه القاهرة.',
+        pickSize:'اختر المقاس أولًا',added:'أُضيفت للحقيبة — ',addedFull:'أُضيفت الإطلالة كاملة — ',pageToast:'صفحة الإطلالة الكاملة تفتح هنا (product.html)',guideToast:'دليل المقاسات يفتح هنا'}
+  };
+  let lang = 'en';
+  const t = k => T[lang][k];
+
+  /* ---------- data (placeholder products) ---------- */
+  const SK = ['#e8c4a6','#c99673','#8d5a3b','#f1d3bc','#6b4430'];
+  const HR = ['#1b1410','#3a2618','#b98a4e','#0f0f0f','#5a3b25'];
+  const P = (en, ar, price, kind, c) => ({en, ar, price, kind, c});
+  const looks = [
+    {en:{name:'Ivory',desc:'A slip of mulberry silk cut on the bias, worn with a quiet satin mule.'},
+     ar:{name:'عاجي',desc:'فستان من حرير التوت بقصّة مائلة، مع حذاء ساتان هادئ.'},
+     f:{type:'dress',top:'#ece3d4',skin:SK[0],hair:HR[2],hs:'long'},
+     pieces:[P('Silk slip dress','فستان حرير ناعم',2400,'dress','#ece3d4'),P('Satin mule','حذاء ساتان',950,'shoe','#d9cbb4')]},
+    {en:{name:'Camel Walk',desc:'Washed linen in a long column coat over a cream trouser.'},
+     ar:{name:'خطوة جملي',desc:'معطف كتان مغسول طويل فوق بنطلون كريمي.'},
+     f:{type:'coat',top:'#b98a5a',bottom:'#e9e0cf',skin:SK[1],hair:HR[0],hs:'short'},
+     pieces:[P('Linen column coat','معطف كتان طويل',4100,'coat','#b98a5a'),P('Cream wide trouser','بنطلون كريمي واسع',1650,'trouser','#e9e0cf'),P('Leather loafer','حذاء جلد',1300,'shoe','#1a1a1a')]},
+    {en:{name:'Bordeaux',desc:'A viscose wrap shirt in deep wine, anchored by wide black wool.'},
+     ar:{name:'بوردو',desc:'قميص فسكوز ملفوف بلون النبيذ مع صوف أسود واسع.'},
+     f:{type:'pants',top:'#7a1f2b',bottom:'#141414',skin:SK[3],hair:HR[3],hs:'bun'},
+     pieces:[P('Viscose wrap shirt','قميص فسكوز ملفوف',1850,'top','#7a1f2b'),P('Wool wide trouser','بنطلون صوف واسع',1900,'trouser','#141414'),P('Pointed flat','حذاء مدبب',1100,'shoe','#141414')]},
+    {en:{name:'Sky Pleat',desc:'Soft cashmere above a pleated chiffon skirt that moves with every step.'},
+     ar:{name:'بليسيه السماء',desc:'كشمير ناعم فوق تنورة شيفون بليسيه تتحرك مع كل خطوة.'},
+     f:{type:'skirt',top:'#f0ebe2',bottom:'#9db7d1',skin:SK[0],hair:HR[2],hs:'long'},
+     pieces:[P('Cashmere crew knit','كنزة كشمير',2950,'top','#f0ebe2'),P('Pleated chiffon skirt','تنورة شيفون بليسيه',2100,'skirt','#9db7d1'),P('Ballet flat','حذاء باليرينا',900,'shoe','#e8dccb')]},
+    {en:{name:'Graphite',desc:'Double-faced wool, tailored close. One tone from shoulder to shoe.'},
+     ar:{name:'جرافيت',desc:'صوف مزدوج الوجه بتفصيل قريب. لون واحد من الكتف للحذاء.'},
+     f:{type:'coat',top:'#2d2f33',bottom:'#2d2f33',skin:SK[2],hair:HR[3],hs:'short'},
+     pieces:[P('Wool tailored jacket','جاكيت صوف مفصّل',5200,'coat','#2d2f33'),P('Tailored trouser','بنطلون مفصّل',2300,'trouser','#2d2f33'),P('Derby shoe','حذاء ديربي',1500,'shoe','#111111')]},
+    {en:{name:'Olive Grove',desc:'Crisp cotton poplin and a pleated olive trouser for long warm days.'},
+     ar:{name:'بستان الزيتون',desc:'قطن بوبلين منعش مع بنطلون زيتي بكسرات لأيام دافئة طويلة.'},
+     f:{type:'pants',top:'#f4f1ea',bottom:'#5f6b3a',skin:SK[1],hair:HR[4],hs:'short'},
+     pieces:[P('Poplin shirt','قميص بوبلين',1600,'top','#f4f1ea'),P('Pleated olive trouser','بنطلون زيتي بكسرات',1750,'trouser','#5f6b3a'),P('Canvas sneaker','حذاء كانفاس',850,'shoe','#e9e6df')]},
+    {en:{name:'Midnight',desc:'Silk crêpe falling to the floor. Made for the hour after dinner.'},
+     ar:{name:'منتصف الليل',desc:'كريب حرير ينسدل حتى الأرض. لساعة ما بعد العشاء.'},
+     f:{type:'dress',top:'#111111',skin:SK[4],hair:HR[0],hs:'bun'},
+     pieces:[P('Silk crêpe gown','فستان كريب حرير',6300,'dress','#111111'),P('Strappy sandal','صندل بأشرطة',1200,'shoe','#111111')]},
+    {en:{name:'Rust',desc:'A suede overshirt in burnt copper over ecru — warm, easy, unhurried.'},
+     ar:{name:'نحاسي',desc:'قميص شامواه نحاسي فوق الإكرو — دافئ وسهل وغير مستعجل.'},
+     f:{type:'coat',top:'#9a4a2a',bottom:'#e5dccb',skin:SK[3],hair:HR[1],hs:'short'},
+     pieces:[P('Suede overshirt','قميص شامواه',3300,'coat','#9a4a2a'),P('Ecru wide trouser','بنطلون إكرو واسع',1650,'trouser','#e5dccb'),P('Suede loafer','حذاء شامواه',1250,'shoe','#6b3a22')]},
+    {en:{name:'Champagne',desc:'Fine black merino above a satin midi skirt that catches the light.'},
+     ar:{name:'شمبانيا',desc:'ميرينو أسود ناعم فوق تنورة ساتان ميدي تلتقط الضوء.'},
+     f:{type:'skirt',top:'#151515',bottom:'#d8c3a0',skin:SK[2],hair:HR[3],hs:'long'},
+     pieces:[P('Merino fine knit','بلوزة ميرينو',1450,'top','#151515'),P('Satin midi skirt','تنورة ساتان ميدي',2200,'skirt','#d8c3a0'),P('Kitten heel','كعب منخفض',1150,'shoe','#151515')]},
+  ];
+  const SIZES = [34, 36, 38, 40, 42, 44];
+
+  /* deterministic pseudo-random for background figures */
+  let seed = 7; const rnd = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+  const TONES = ['#e9e0cf','#2a2a2a','#7a1f2b','#b98a5a','#5f6b3a','#9db7d1','#f0ebe2','#3d3328'];
+  const TYPES = ['dress','pants','coat','skirt'];
+  const randFig = () => ({type:TYPES[Math.floor(rnd()*4)],top:TONES[Math.floor(rnd()*8)],bottom:TONES[Math.floor(rnd()*8)],
+    skin:SK[Math.floor(rnd()*5)],hair:HR[Math.floor(rnd()*5)],hs:['short','long','bun'][Math.floor(rnd()*3)]});
+  const backFigs = Array.from({length:11}, randFig);
+  const farFigs = Array.from({length:12}, randFig);
+  const frontFigs = Array.from({length:3}, randFig);
+
+  /* ---------- placeholder figure (original stylised SVG) ---------- */
+  function figure(f){
+    const {type,top,bottom=top,skin,hair,hs} = f, shoe = '#141414';
+    const armL = `<path d="M40 68 Q32 72 31 110 L30 172 L37 172 L40 115 L44 90 Z" fill="${top}"/>`;
+    const armR = `<path d="M80 68 Q88 72 89 110 L90 172 L83 172 L80 115 L76 90 Z" fill="${top}"/>`;
+    const hands = `<circle cx="33.5" cy="177" r="4" fill="${skin}"/><circle cx="86.5" cy="177" r="4" fill="${skin}"/>`;
+    const bareLegs = `<path d="M48 240 L47 318 L54 318 L57 240 Z M63 240 L66 318 L73 318 L72 240 Z" fill="${skin}"/>`;
+    const pants = `<path d="M42 184 L78 184 L76 318 L63 318 L60 206 L57 318 L44 318 Z" fill="${bottom}"/>`;
+    const torso = `<path d="M40 68 Q60 62 80 68 L79 150 L78 188 L42 188 L41 150 Z" fill="${top}"/>`;
+    let body = '';
+    if (type === 'dress') body = bareLegs + `<path d="M41 66 Q60 60 79 66 L80 150 L92 262 Q60 272 28 262 L40 150 Z" fill="${top}"/>` + armL + armR;
+    if (type === 'skirt') body = bareLegs + torso + `<path d="M41 146 L79 146 L90 266 Q60 274 30 266 Z" fill="${bottom}"/>` + armL + armR;
+    if (type === 'pants') body = pants + torso + armL + armR;
+    if (type === 'coat')  body = pants + `<path d="M38 66 Q60 58 82 66 L86 150 L88 248 L32 248 L34 150 Z" fill="${top}"/>`
+                               + `<path d="M52 66 L60 112 L68 66 M60 112 L60 248" stroke="rgba(0,0,0,.28)" fill="none" stroke-width="1.2"/>` + armL + armR;
+    const hairShort = `<path d="M47 40 Q46 22 60 22 Q74 22 73 40 Q70 30 60 30 Q50 30 47 40 Z" fill="${hair}"/>`;
+    const hairLong  = `<path d="M46 40 Q45 20 60 21 Q75 20 74 40 L76 80 Q68 74 70 46 Q60 32 50 46 Q52 74 44 80 Z" fill="${hair}"/>`;
+    const hairEl = hs === 'long' ? hairLong : hs === 'bun' ? hairShort + `<circle cx="60" cy="20" r="6" fill="${hair}"/>` : hairShort;
+    return `<svg viewBox="0 0 120 340" aria-hidden="true">
+      <ellipse cx="60" cy="327" rx="36" ry="5" fill="#000" opacity=".55"/>
+      ${body}${hands}
+      <ellipse cx="49" cy="321" rx="8" ry="4" fill="${shoe}"/><ellipse cx="71" cy="321" rx="8" ry="4" fill="${shoe}"/>
+      <rect x="55" y="50" width="10" height="16" fill="${skin}"/>
+      <ellipse cx="60" cy="40" rx="12" ry="15" fill="${skin}"/>
+      ${hairEl}
+    </svg>`;
+  }
+  /* flat garment thumbnails for the pieces panel */
+  function garment({kind, c}){
+    const line = 'stroke="rgba(0,0,0,.22)" stroke-width="1" fill="none"';
+    const shapes = {
+      top:`<path d="M35 18 L50 24 L65 18 L84 30 L78 46 L70 42 L70 84 L30 84 L30 42 L22 46 L16 30 Z" fill="${c}"/><path d="M50 24 L50 84" ${line}/>`,
+      coat:`<path d="M36 12 L50 20 L64 12 L82 24 L80 62 L72 60 L72 92 L28 92 L28 60 L20 62 L18 24 Z" fill="${c}"/><path d="M44 14 L50 44 L56 14 M50 44 L50 92" ${line}/>`,
+      dress:`<path d="M40 10 L42 10 L44 22 L56 22 L58 10 L60 10 L62 34 L76 90 L24 90 L38 34 Z" fill="${c}"/>`,
+      skirt:`<path d="M34 20 L66 20 L80 86 L20 86 Z" fill="${c}"/><path d="M42 20 L36 86 M50 20 L50 86 M58 20 L64 86" ${line}/>`,
+      trouser:`<path d="M30 10 L70 10 L74 90 L56 90 L50 36 L44 90 L26 90 Z" fill="${c}"/>`,
+      shoe:`<path d="M14 62 Q20 50 40 54 L62 60 Q84 62 88 72 L88 76 L14 76 Z" fill="${c}"/><path d="M14 76 L88 76" stroke="rgba(255,255,255,.25)" stroke-width="2"/>`
+    };
+    return `<svg viewBox="0 0 100 100" aria-hidden="true">${shapes[kind]}</svg>`;
+  }
+
+  /* ---------- build layers ---------- */
+  const $ = id => document.getElementById(id);
+  const hero = $('hero'), lv = $('lv'), slot = $('lv-slot'), fly = $('lv-fly');
+  function build(el, figs, opts = {}){
+    return figs.map((f, i) => {
+      const node = document.createElement(opts.button ? 'button' : 'div');
+      node.className = 'look';
+      if (opts.button){ node.type = 'button'; node.dataset.i = i; node.setAttribute('aria-haspopup', 'dialog'); }
+      node.innerHTML = opts.button
+        ? `<span class="glow"></span><span class="fig">${figure(f)}</span><span class="view" data-i18n="view">View</span><span class="meta"><em></em><small></small></span>`
+        : figure(f);
+      el.appendChild(node);
+      return {node, s: opts.vary ? .85 + rnd() * .25 : 1, dy: opts.vary ? Math.round((rnd() - .5) * 8) : 0};
+    });
+  }
+  // off = stagger in spacing units, so rows don't line up behind each other
+  const layers = [
+    {items: build($('layer-far'), farFigs, {vary:true}), factor:.15, spacingK:.78, off:.3},
+    {items: build($('layer-back'), backFigs, {vary:true}), factor:.38, spacingK:.875, off:.55},
+    {items: build($('layer-mid'), looks.map(l => l.f), {button:true}), factor:1, spacingK:1, off:0},
+    {items: build($('layer-front'), frontFigs), factor:2.2, spacingK:5, off:.5},
+  ];
+  const mid = layers[2];
+
+  /* ---------- camera ---------- */
+  /* motion tuning */
+  const DRIFT = .45, DRAG = 1.35, GLIDE = .955, IDLE_MS = 1200;
+  let cam = 0, vel = 0, tween = null, dragging = false, current = 0, lastInteract = 0;
+  let focused = -1;       // index of the look open in the look view (-1 = closed)
+  let busy = false;       // a fly animation is running
+  let S = 200;            // main-row spacing (px)
+  const dir = () => lang === 'ar' ? -1 : 1;     // RTL: looks run right-to-left
+  const mod = (a, n) => ((a % n) + n) % n;
+  const pad = v => String(v).padStart(2, '0');
+
+  function layout(){
+    S = Math.max(120, innerWidth / 7);          // ~7 main looks across the screen
+    layers.forEach(L => { L.sp = S * L.spacingK; L.len = L.items.length * L.sp; });
+  }
+  function render(){
+    layers.forEach(L => {
+      L.items.forEach((it, i) => {
+        const p = mod((i + L.off) * L.sp * dir() - cam * L.factor + L.len / 2, L.len) - L.len / 2;
+        it.node.style.transform = `translate3d(${p.toFixed(1)}px,${it.dy}px,0) scale(${it.s})`;
+      });
+    });
+    const idx = mod(Math.round(cam * dir() / S), looks.length);
+    if (idx !== current){ current = idx; updateCount(); }
+  }
+  function updateCount(){
+    $('count').textContent = `${t('look')} ${pad((focused >= 0 ? focused : current) + 1)} / ${pad(looks.length)}`;
+  }
+  const deltaTo = i => mod(i * S * dir() - cam + mid.len / 2, mid.len) - mid.len / 2;
+  function animTo(target, dur = 900){
+    vel = 0;
+    if (reduce){ cam = target; tween = null; return; }
+    tween = {from: cam, to: target, t0: performance.now(), dur};
+  }
+  const centreOn = i => animTo(cam + deltaTo(i));
+
+  let lastFrame = 0;
+  function frame(now){
+    const k60 = Math.min(3, (now - (lastFrame || now)) / 16.67 || 1); // frame-rate independent (60/120Hz feel the same)
+    lastFrame = now;
+    if (tween){
+      const k = Math.min(1, (now - tween.t0) / tween.dur);
+      const e = k < .5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2;
+      cam = tween.from + (tween.to - tween.from) * e;
+      if (k === 1) tween = null;
+    } else if (!dragging && focused < 0){
+      if (Math.abs(vel) > .05){ cam += vel * k60; vel *= Math.pow(GLIDE, k60); }
+      else if (!reduce && now - lastInteract > IDLE_MS) cam += DRIFT * dir() * k60; // idle drift
+    }
+    render();
+    requestAnimationFrame(frame);
+  }
+
+  /* ---------- look view: FLIP fly-in / fly-out ---------- */
+  function rel(el){
+    const r = el.getBoundingClientRect(), h = hero.getBoundingClientRect();
+    return {x: r.left - h.left, y: r.top - h.top, w: r.width, h: r.height};
+  }
+  const place = (el, b) => Object.assign(el.style, {left:`${b.x}px`, top:`${b.y}px`, width:`${b.w}px`, height:`${b.h}px`});
+  const invert = (a, b) => `translate(${a.x - b.x}px,${a.y - b.y}px) scale(${a.w / b.w})`;
+
+  function openLook(i){
+    if (busy || focused >= 0) return;
+    busy = true; focused = i; tween = null; vel = 0;
+    const look = mid.items[i].node;
+    const a = rel(look.querySelector('.fig'));          // First: where the figure is now (incl. hover zoom)
+    sel = 0; size = null; fillLookView();
+    lv.scrollTop = 0;
+    hero.classList.add('lv-open'); lv.setAttribute('aria-hidden', 'false');
+    slot.innerHTML = '';
+    const b = rel(slot);                                  // Last: its place in the look view
+    fly.innerHTML = figure(looks[i].f); place(fly, b); fly.style.display = 'block';
+    look.classList.add('away');
+    const anim = fly.animate([{transform: invert(a, b)}, {transform: 'none'}], {duration: FLY_MS, easing: FLY_EASE});
+    anim.onfinish = () => {                              // hand the figure over to the slot (scrolls with it on mobile)
+      slot.innerHTML = fly.innerHTML; fly.style.display = 'none';
+      busy = false; $('lv-close').focus({preventScroll: true});
+    };
+    updateCount();
+  }
+  function closeLook(refocus){
+    if (busy || focused < 0) return;
+    busy = true;
+    const look = mid.items[focused].node;
+    const b = rel(slot);
+    fly.innerHTML = slot.innerHTML; place(fly, b); fly.style.display = 'block'; slot.innerHTML = '';
+    hero.classList.remove('lv-open'); lv.setAttribute('aria-hidden', 'true');
+    const a = rel(look.querySelector('.fig'));          // back to the exact spot in the salon
+    const anim = fly.animate([{transform: 'none'}, {transform: invert(a, b)}], {duration: FLY_MS, easing: FLY_EASE, fill: 'forwards'});
+    anim.onfinish = () => {
+      look.classList.remove('away'); fly.style.display = 'none'; anim.cancel();
+      if (refocus) look.focus({preventScroll: true});
+      focused = -1; busy = false; lastInteract = performance.now(); updateCount();
+    };
+  }
+  // prev / next inside the look view: slide out, swap, slide in; the salon re-centres unseen behind the blur
+  function switchLook(step){
+    if (busy || focused < 0) return;
+    busy = true;
+    const n = mod(focused + step, looks.length), dx = 28 * step * dir();
+    const els = [slot, $('lv-text'), $('lv-preview'), $('lv-pieces'), $('lv-count')];
+    const outs = els.map(el => el.animate([{opacity: 1, transform: 'none'}, {opacity: 0, transform: `translateX(${-dx}px)`}],
+      {duration: reduce ? 1 : 240, easing: 'cubic-bezier(.4,0,1,1)', fill: 'forwards'}));
+    outs[0].onfinish = () => {
+      mid.items[focused].node.classList.remove('away');
+      focused = n; mid.items[n].node.classList.add('away');
+      cam += deltaTo(n); tween = null;
+      sel = 0; size = null;
+      slot.innerHTML = figure(looks[n].f); fillLookView();
+      outs.forEach(o => o.cancel());
+      els.forEach(el => el.animate([{opacity: 0, transform: `translateX(${dx}px)`}, {opacity: 1, transform: 'none'}],
+        {duration: reduce ? 1 : 460, easing: 'cubic-bezier(0,0,.2,1)'}));
+      busy = false; updateCount();
+    };
+  }
+
+  let sel = 0, size = null;
+  function fmtPrice(v){
+    return lang === 'ar' ? `${v.toLocaleString('ar-EG')} ${t('cur')}` : `${t('cur')} ${v.toLocaleString('en-US')}`;
+  }
+  function fillLookView(){
+    if (focused < 0) return;
+    const L = looks[focused], n = looks.length, prev = mod(focused - 1, n), next = mod(focused + 1, n);
+    $('lv-name').textContent = L[lang].name;
+    $('lv-desc').textContent = L[lang].desc;
+    $('lv-prev-name').textContent = looks[prev][lang].name; $('lv-prev-n').textContent = pad(prev + 1);
+    $('lv-next-name').textContent = looks[next][lang].name; $('lv-next-n').textContent = pad(next + 1);
+    $('lv-pos').textContent = `${pad(focused + 1)} / ${pad(n)}`;
+    $('lv-count').textContent = t(L.pieces.length === 2 ? 'two' : 'three');
+    $('lv-pieces').innerHTML = L.pieces.map((p, j) =>
+      `<li><button type="button" data-j="${j}" aria-pressed="${j === sel}">${garment(p)}<span class="nm">${p[lang]}</span><span class="pr">${fmtPrice(p.price)}</span></button></li>`).join('');
+    $('lv-sizes').innerHTML = SIZES.map(s => `<button type="button" data-s="${s}" aria-pressed="${s === size}">${s}</button>`).join('')
+      + `<button type="button" class="guide" id="lv-guide">${t('sizeGuide')}</button>`;
+    fillPiece();
+    $('lv-full-price').textContent = fmtPrice(L.pieces.reduce((s, p) => s + p.price, 0));
+  }
+  function fillPiece(){
+    const p = looks[focused].pieces[sel];
+    $('lv-preview').innerHTML = garment(p);
+    $('lv-add-price').textContent = fmtPrice(p.price);
+    $('lv-pieces').querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.j === sel)));
+  }
+
+  /* ---------- input: drag / wheel / keys ---------- */
+  let startX = 0, lastX = 0, moved = 0, downLook = null;
+  hero.addEventListener('pointerdown', e => {
+    if (focused >= 0 || busy || e.target.closest('.ui, .lv') || e.button > 0) return;
+    dragging = true; moved = 0; startX = lastX = e.clientX; vel = 0; tween = null;
+    downLook = e.target.closest('.layer.mid .look');
+    hero.classList.add('dragging');
+    lastInteract = performance.now();
+  });
+  // the "View" disc follows the cursor inside the hovered look
+  $('layer-mid').addEventListener('pointermove', e => {
+    const b = e.target.closest('.look');
+    if (!b || dragging || e.pointerType !== 'mouse') return;
+    const r = b.getBoundingClientRect();
+    b.style.setProperty('--mx', `${((e.clientX - r.left) / r.width * 100).toFixed(1)}%`);
+    b.style.setProperty('--my', `${((e.clientY - r.top) / r.height * 100).toFixed(1)}%`);
+  });
+  addEventListener('pointermove', e => {
+    if (!dragging) return;
+    const dx = e.clientX - lastX; lastX = e.clientX;
+    moved = Math.max(moved, Math.abs(e.clientX - startX));
+    cam -= dx * DRAG; vel = -dx * DRAG;
+  });
+  function endDrag(cancelled){
+    if (!dragging) return;
+    dragging = false; hero.classList.remove('dragging');
+    lastInteract = performance.now();
+    if (cancelled || moved > 6) return;
+    vel = 0;
+    if (downLook) openLook(+downLook.dataset.i);
+  }
+  addEventListener('pointerup', () => endDrag(false));
+  addEventListener('pointercancel', () => endDrag(true));
+
+  // keyboard activation of a look (Enter / Space) — mouse is handled in pointerup
+  $('layer-mid').addEventListener('click', e => {
+    const b = e.target.closest('.look');
+    if (b && e.detail === 0) openLook(+b.dataset.i);
+  });
+  $('layer-mid').addEventListener('focusin', e => {
+    const b = e.target.closest('.look');
+    if (b && focused < 0 && !busy) centreOn(+b.dataset.i);
+  });
+  hero.addEventListener('wheel', e => {      // horizontal trackpad swipe only; vertical scroll stays with the page
+    if (focused >= 0 || Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+    e.preventDefault(); tween = null; cam += e.deltaX; lastInteract = performance.now();
+  }, {passive:false});
+  addEventListener('keydown', e => {
+    if (e.key === 'Escape' && focused >= 0) closeLook(true);
+    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+    const step = (e.key === 'ArrowRight' ? 1 : -1) * dir();
+    if (focused >= 0){ switchLook(step); e.preventDefault(); return; }
+    if (hero.contains(document.activeElement)){
+      const n = mod(current + step, looks.length);
+      centreOn(n); mid.items[n].node.focus({preventScroll:true});
+      e.preventDefault();
+    }
+  });
+
+  /* ---------- look view controls ---------- */
+  let bag = 0, toastTimer;
+  function toast(msg){
+    const el = $('toast'); el.textContent = msg; el.classList.add('show');
+    clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove('show'), 2200);
+  }
+  function needSize(){
+    if (size !== null) return false;
+    toast(t('pickSize'));
+    $('lv-sizes').animate([{transform:'translateX(0)'},{transform:'translateX(-5px)'},{transform:'translateX(5px)'},{transform:'translateX(0)'}], {duration: 300});
+    return true;
+  }
+  $('lv-close').addEventListener('click', () => closeLook(false));
+  lv.addEventListener('click', e => { if (e.target === lv) closeLook(false); });   // click on the blurred salon
+  $('lv-prev').addEventListener('click', () => switchLook(-1));
+  $('lv-next').addEventListener('click', () => switchLook(1));
+  $('lv-page').addEventListener('click', () => toast(t('pageToast')));
+  $('lv-pieces').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    sel = +b.dataset.j; fillPiece();
+    $('lv-preview').animate([{opacity: 0}, {opacity: 1}], {duration: reduce ? 1 : 350});
+  });
+  $('lv-sizes').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    if (b.id === 'lv-guide') return toast(t('guideToast'));
+    size = +b.dataset.s;
+    $('lv-sizes').querySelectorAll('[data-s]').forEach(x => x.setAttribute('aria-pressed', String(+x.dataset.s === size)));
+  });
+  $('lv-add').addEventListener('click', () => {
+    if (needSize()) return;
+    $('bag-count').textContent = ++bag;
+    toast(t('added') + looks[focused].pieces[sel][lang]);
+  });
+  $('lv-full').addEventListener('click', () => {
+    if (needSize()) return;
+    bag += looks[focused].pieces.length; $('bag-count').textContent = bag;
+    toast(t('addedFull') + looks[focused][lang].name);
+  });
+
+  /* ---------- language / RTL ---------- */
+  function applyLang(){
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.querySelectorAll('[data-i18n]').forEach(n => n.textContent = t(n.dataset.i18n));
+    $('lang').textContent = t('lang');
+    mid.items.forEach((it, i) => {
+      it.node.setAttribute('aria-label', `${t('look')} ${i + 1}: ${looks[i][lang].name}`);
+      it.node.querySelector('.meta em').textContent = looks[i][lang].name;
+      it.node.querySelector('.meta small').textContent = `${t('look')} ${pad(i + 1)} · ${fmtPrice(looks[i].pieces.reduce((s, p) => s + p.price, 0))}`;
+    });
+    fillLookView(); updateCount();
+  }
+  $('lang').addEventListener('click', () => {
+    const keep = focused >= 0 ? focused : current;
+    lang = lang === 'en' ? 'ar' : 'en';
+    applyLang();
+    cam = keep * S * dir();                    // keep the same look centred after the flip
+    tween = null;
+  });
+
+  addEventListener('resize', () => { const keep = focused >= 0 ? focused : current; layout(); cam = keep * S * dir(); });
+
+  layout(); applyLang(); requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
