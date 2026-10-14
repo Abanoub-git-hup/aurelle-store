@@ -1,0 +1,65 @@
+{%- comment -%}
+  Product card — design.md → Components → Product card · prd.md FR-1 (swatch swap) + FR-2 (hover fade).
+  {% include 'components/product-card', product: p, group: 'new-in-women' %}
+  `group` keeps the swatch radio names unique when one product appears in several sections.
+  Every swatch carries its colour's image URLs, so switching colour never touches the network.
+  Quick View / Quick Add buttons arrive with their own tickets.
+{%- endcomment -%}
+{%- assign colour = product.colors | where: 'id', product.defaultColor | first -%}
+{%- assign url = '/products/' | append: product.handle | append: '/' | lurl | append: '?color=' | append: colour.id -%}
+{%- assign sizes = '(min-width: 1200px) 22vw, 46vw' -%}
+{%- assign mainKey = colour.images[0] -%}
+{%- assign hoverKey = colour.images[1] -%}
+<article class="c-card{% if product.singleImage %} c-card--single-image{% endif %}{% unless product.available %} is-sold-out{% endunless %}"
+  data-component="product-card" data-handle="{{ product.handle }}" data-color="{{ colour.id }}">
+  <div class="c-card__media">
+    <a class="c-card__media-link" href="{{ url }}" tabindex="-1" aria-hidden="true" data-card-link>
+      {% image mainKey, '', 'c-card__img c-card__img--main', sizes %}
+      {%- if hoverKey %}
+      {% image hoverKey, '', 'c-card__img c-card__img--hover', sizes %}
+      {%- endif %}
+    </a>
+    {%- unless product.available %}
+    <p class="c-card__badge c-card__badge--sold-out">{{ 'card.soldOut' | t }}</p>
+    {%- else %}{% if product.discount > 0 %}
+    <p class="c-card__badge">{{ 'card.discount' | t: product.discount }}</p>
+    {%- elsif product.badge == 'new' %}
+    <p class="c-card__badge">{{ 'card.new' | t }}</p>
+    {%- endif %}{% endunless %}
+  </div>
+
+  <div class="c-card__info">
+    <h3 class="c-card__title"><a class="c-card__link" href="{{ url }}" data-card-link>{{ product.title | loc }}</a></h3>
+    <p class="c-card__price">
+      <span class="u-visually-hidden">{{ 'card.price' | t }}:</span>
+      <span class="c-card__amount">{{ product.price | money }}</span>
+      {%- if product.compareAt %}
+      <span class="u-visually-hidden">{{ 'card.was' | t }}</span>
+      <s class="c-card__was">{{ product.compareAt | money }}</s>
+      {%- endif %}
+    </p>
+
+    {%- if product.colors.size > 1 %}
+    <fieldset class="c-card__swatches" data-swatches>
+      <legend class="u-visually-hidden">{{ 'a11y.colours' | t }} — {{ product.title | loc }}</legend>
+      {%- for c in product.colors limit: shop.maxSwatches %}
+      {%- assign main = c.images[0] | image_data -%}
+      {%- if c.images[1] %}{% assign hover = c.images[1] | image_data %}{% else %}{% assign hover = nil %}{% endif %}
+      <label class="c-swatch{% unless c.available %} is-unavailable{% endunless %}" style="--swatch: {{ c.swatch }}">
+        <input class="c-swatch__input" type="radio" name="swatch-{{ group }}-{{ product.handle }}" value="{{ c.id }}"
+          {%- if c.id == colour.id %} checked{% endif %}
+          data-label="{{ c.label | loc }}"
+          data-main-src="{{ main.src }}" data-main-srcset="{{ main.srcset }}"
+          data-hover-src="{{ hover.src }}" data-hover-srcset="{{ hover.srcset }}">
+        <span class="u-visually-hidden">{{ c.label | loc }}{% unless c.available %} — {{ 'card.soldOut' | t }}{% endunless %}</span>
+      </label>
+      {%- endfor %}
+      {%- if product.colors.size > shop.maxSwatches %}
+      {%- assign more = product.colors.size | minus: shop.maxSwatches %}
+      <a class="c-card__more" href="{{ url }}" aria-label="{{ 'card.moreColoursLabel' | t: more }}" data-card-link>{{ 'card.moreColours' | t: more }}</a>
+      {%- endif %}
+    </fieldset>
+    {%- endif %}
+    <p class="c-card__colour" data-colour-name>{{ colour.label | loc }}</p>
+  </div>
+</article>

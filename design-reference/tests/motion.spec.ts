@@ -118,7 +118,7 @@ test.describe('without JavaScript', () => {
       await expect(page.getByRole('heading', { level: 1 })).toHaveText(brand);
       await expect(page.getByRole('heading', { level: 2, name: t(lang, 'motionDemo.title') })).toBeVisible();
       await expect(page.getByText(t(lang, 'motionDemo.text'))).toBeVisible();
-      await expect(page.getByText(t(lang, 'category.outerwear'))).toBeVisible();
+      await expect(page.getByRole('heading', { level: 2, name: t(lang, 'newIn.title') })).toBeVisible();
       expect(await allSettled(page)).toBe(true);
     });
   }

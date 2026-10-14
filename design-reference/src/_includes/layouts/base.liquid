@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ titleKey | t }}</title>
   <meta name="description" content="{{ 'meta.description' | t }}">
+  {%- if noindex %}
+  <meta name="robots" content="noindex">
+  {%- endif %}
   {%- for alt in site.languages %}
   <link rel="alternate" hreflang="{{ alt.code }}" href="{{ page.url | lang_url: alt.code }}">
   {%- endfor %}

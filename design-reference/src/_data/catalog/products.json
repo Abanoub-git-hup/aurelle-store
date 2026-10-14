@@ -1,0 +1,2816 @@
+[
+  {
+    "handle": "wool-wrap-coat",
+    "department": "women",
+    "category": "outerwear",
+    "title": {
+      "en": "Wool Wrap Coat",
+      "ar": "معطف صوف ملفوف"
+    },
+    "description": {
+      "en": "Wool Wrap Coat — made slowly in a small workshop, to be worn for years.",
+      "ar": "معطف صوف ملفوف — مصنوع على مهل في مشغل صغير، ليُلبس سنين."
+    },
+    "price": 18500,
+    "compareAt": null,
+    "badge": "new",
+    "colors": [
+      {
+        "id": "camel",
+        "label": {
+          "en": "Camel",
+          "ar": "جملي"
+        },
+        "swatch": "#B48A5E",
+        "images": ["products/wool-wrap-coat/camel-1", "products/wool-wrap-coat/camel-2"]
+      },
+      {
+        "id": "charcoal",
+        "label": {
+          "en": "Charcoal",
+          "ar": "فحمي"
+        },
+        "swatch": "#3A3632",
+        "images": ["products/wool-wrap-coat/charcoal-1", "products/wool-wrap-coat/charcoal-2"]
+      },
+      {
+        "id": "ivory",
+        "label": {
+          "en": "Ivory",
+          "ar": "عاجي"
+        },
+        "swatch": "#EDE6DA",
+        "images": ["products/wool-wrap-coat/ivory-1", "products/wool-wrap-coat/ivory-2"]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "variants": [
+      {
+        "id": "wool-wrap-coat-camel-xs",
+        "color": "camel",
+        "size": "XS",
+        "stock": 4
+      },
+      {
+        "id": "wool-wrap-coat-camel-s",
+        "color": "camel",
+        "size": "S",
+        "stock": 5
+      },
+      {
+        "id": "wool-wrap-coat-camel-m",
+        "color": "camel",
+        "size": "M",
+        "stock": 1
+      },
+      {
+        "id": "wool-wrap-coat-camel-l",
+        "color": "camel",
+        "size": "L",
+        "stock": 2
+      },
+      {
+        "id": "wool-wrap-coat-camel-xl",
+        "color": "camel",
+        "size": "XL",
+        "stock": 4
+      },
+      {
+        "id": "wool-wrap-coat-charcoal-xs",
+        "color": "charcoal",
+        "size": "XS",
+        "stock": 5
+      },
+      {
+        "id": "wool-wrap-coat-charcoal-s",
+        "color": "charcoal",
+        "size": "S",
+        "stock": 1
+      },
+      {
+        "id": "wool-wrap-coat-charcoal-m",
+        "color": "charcoal",
+        "size": "M",
+        "stock": 8
+      },
+      {
+        "id": "wool-wrap-coat-charcoal-l",
+        "color": "charcoal",
+        "size": "L",
+        "stock": 5
+      },
+      {
+        "id": "wool-wrap-coat-charcoal-xl",
+        "color": "charcoal",
+        "size": "XL",
+        "stock": 4
+      },
+      {
+        "id": "wool-wrap-coat-ivory-xs",
+        "color": "ivory",
+        "size": "XS",
+        "stock": 3
+      },
+      {
+        "id": "wool-wrap-coat-ivory-s",
+        "color": "ivory",
+        "size": "S",
+        "stock": 7
+      },
+      {
+        "id": "wool-wrap-coat-ivory-m",
+        "color": "ivory",
+        "size": "M",
+        "stock": 6
+      },
+      {
+        "id": "wool-wrap-coat-ivory-l",
+        "color": "ivory",
+        "size": "L",
+        "stock": 1
+      },
+      {
+        "id": "wool-wrap-coat-ivory-xl",
+        "color": "ivory",
+        "size": "XL",
+        "stock": 4
+      }
+    ],
+    "material": {
+      "en": "Outer: 100% wool from a family mill. Lining: cupro.",
+      "ar": "الخارج: صوف ١٠٠٪ من مغزل عائلي. البطانة: كوبرو."
+    },
+    "care": {
+      "en": "Dry clean or hand wash cold. Dry flat, away from the sun.",
+      "ar": "تنظيف جاف أو غسيل يدوي بماء بارد. يُجفف مفروداً بعيداً عن الشمس."
+    },
+    "lookIds": [],
+    "related": ["double-faced-cape", "quilted-linen-jacket", "cashmere-crew"]
+  },
+  {
+    "handle": "double-faced-cape",
+    "department": "women",
+    "category": "outerwear",
+    "title": {
+      "en": "Double-Faced Cape",
+      "ar": "كاب بوجهين"
+    },
+    "description": {
+      "en": "Double-Faced Cape — made slowly in a small workshop, to be worn for years.",
+      "ar": "كاب بوجهين — مصنوع على مهل في مشغل صغير، ليُلبس سنين."
+    },
+    "price": 16200,
+    "compareAt": null,
+    "badge": null,
+    "colors": [
+      {
+        "id": "oat",
+        "label": {
+          "en": "Oat",
+          "ar": "شوفاني"
+        },
+        "swatch": "#D9CDB8",
+        "images": ["products/double-faced-cape/oat-1", "products/double-faced-cape/oat-2"]
+      },
+      {
+        "id": "chocolate",
+        "label": {
+          "en": "Chocolate",
+          "ar": "شوكولاتة"
+        },
+        "swatch": "#5A3E2E",
+        "images": ["products/double-faced-cape/chocolate-1", "products/double-faced-cape/chocolate-2"]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "variants": [
+      {
+        "id": "double-faced-cape-oat-xs",
+        "color": "oat",
+        "size": "XS",
+        "stock": 2
+      },
+      {
+        "id": "double-faced-cape-oat-s",
+        "color": "oat",
+        "size": "S",
+        "stock": 6
+      },
+      {
+        "id": "double-faced-cape-oat-m",
+        "color": "oat",
+        "size": "M",
+        "stock": 2
+      },
+      {
+        "id": "double-faced-cape-oat-l",
+        "color": "oat",
+        "size": "L",
+        "stock": 5
+      },
+      {
+        "id": "double-faced-cape-oat-xl",
+        "color": "oat",
+        "size": "XL",
+        "stock": 4
+      },
+      {
+        "id": "double-faced-cape-chocolate-xs",
+        "color": "chocolate",
+        "size": "XS",
+        "stock": 2
+      },
+      {
+        "id": "double-faced-cape-chocolate-s",
+        "color": "chocolate",
+        "size": "S",
+        "stock": 1
+      },
+      {
+        "id": "double-faced-cape-chocolate-m",
+        "color": "chocolate",
+        "size": "M",
+        "stock": 8
+      },
+      {
+        "id": "double-faced-cape-chocolate-l",
+        "color": "chocolate",
+        "size": "L",
+        "stock": 8
+      },
+      {
+        "id": "double-faced-cape-chocolate-xl",
+        "color": "chocolate",
+        "size": "XL",
+        "stock": 1
+      }
+    ],
+    "material": {
+      "en": "Outer: 100% wool from a family mill. Lining: cupro.",
+      "ar": "الخارج: صوف ١٠٠٪ من مغزل عائلي. البطانة: كوبرو."
+    },
+    "care": {
+      "en": "Dry clean or hand wash cold. Dry flat, away from the sun.",
+      "ar": "تنظيف جاف أو غسيل يدوي بماء بارد. يُجفف مفروداً بعيداً عن الشمس."
+    },
+    "lookIds": [],
+    "related": ["wool-wrap-coat", "quilted-linen-jacket", "cashmere-crew"]
+  },
+  {
+    "handle": "quilted-linen-jacket",
+    "department": "women",
+    "category": "outerwear",
+    "title": {
+      "en": "Quilted Linen Jacket",
+      "ar": "جاكيت كتان مبطّن"
+    },
+    "description": {
+      "en": "Quilted Linen Jacket — made slowly in a small workshop, to be worn for years.",
+      "ar": "جاكيت كتان مبطّن — مصنوع على مهل في مشغل صغير، ليُلبس سنين."
+    },
+    "price": 9800,
+    "compareAt": 12250,
+    "badge": null,
+    "colors": [
+      {
+        "id": "stone",
+        "label": {
+          "en": "Stone",
+          "ar": "حجري"
+        },
+        "swatch": "#A9A091",
+        "images": ["products/quilted-linen-jacket/stone-1", "products/quilted-linen-jacket/stone-2"]
+      },
+      {
+        "id": "olive",
+        "label": {
+          "en": "Olive",
+          "ar": "زيتوني"
+        },
+        "swatch": "#6B6A4B",
+        "images": ["products/quilted-linen-jacket/olive-1", "products/quilted-linen-jacket/olive-2"]
+      },
+      {
+        "id": "black",
+        "label": {
+          "en": "Black",
+          "ar": "أسود"
+        },
+        "swatch": "#1F1C19",
+        "images": ["products/quilted-linen-jacket/black-1", "products/quilted-linen-jacket/black-2"]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "variants": [
+      {
+        "id": "quilted-linen-jacket-stone-xs",
+        "color": "stone",
+        "size": "XS",
+        "stock": 4
+      },
+      {
+        "id": "quilted-linen-jacket-stone-s",
+        "color": "stone",
+        "size": "S",
+        "stock": 8
+      },
+      {
+        "id": "quilted-linen-jacket-stone-m",
+        "color": "stone",
+        "size": "M",
+        "stock": 2
+      },
+      {
+        "id": "quilted-linen-jacket-stone-l",
+        "color": "stone",
+        "size": "L",
+        "stock": 4
+      },
+      {
+        "id": "quilted-linen-jacket-stone-xl",
+        "color": "stone",
+        "size": "XL",
+        "stock": 5
+      },
+      {
+        "id": "quilted-linen-jacket-olive-xs",
+        "color": "olive",
+        "size": "XS",
+        "stock": 6
+      },
+      {
+        "id": "quilted-linen-jacket-olive-s",
+        "color": "olive",
+        "size": "S",
+        "stock": 3
+      },
+      {
+        "id": "quilted-linen-jacket-olive-m",
+        "color": "olive",
+        "size": "M",
+        "stock": 2
+      },
+      {
+        "id": "quilted-linen-jacket-olive-l",
+        "color": "olive",
+        "size": "L",
+        "stock": 8
+      },
+      {
+        "id": "quilted-linen-jacket-olive-xl",
+        "color": "olive",
+        "size": "XL",
+        "stock": 4
+      },
+      {
+        "id": "quilted-linen-jacket-black-xs",
+        "color": "black",
+        "size": "XS",
+        "stock": 2
+      },
+      {
+        "id": "quilted-linen-jacket-black-s",
+        "color": "black",
+        "size": "S",
+        "stock": 5
+      },
+      {
+        "id": "quilted-linen-jacket-black-m",
+        "color": "black",
+        "size": "M",
+        "stock": 3
+      },
+      {
+        "id": "quilted-linen-jacket-black-l",
+        "color": "black",
+        "size": "L",
+        "stock": 2
+      },
+      {
+        "id": "quilted-linen-jacket-black-xl",
+        "color": "black",
+        "size": "XL",
+        "stock": 7
+      }
+    ],
+    "material": {
+      "en": "Outer: 100% wool from a family mill. Lining: cupro.",
+      "ar": "الخارج: صوف ١٠٠٪ من مغزل عائلي. البطانة: كوبرو."
+    },
+    "care": {
+      "en": "Dry clean or hand wash cold. Dry flat, away from the sun.",
+      "ar": "تنظيف جاف أو غسيل يدوي بماء بارد. يُجفف مفروداً بعيداً عن الشمس."
+    },
+    "lookIds": [],
+    "related": ["wool-wrap-coat", "double-faced-cape", "cashmere-crew"]
+  },
+  {
+    "handle": "cashmere-crew",
+    "department": "women",
+    "category": "knitwear",
+    "title": {
+      "en": "Cashmere Crew",
+      "ar": "بلوفر كشمير برقبة دائرية"
+    },
+    "description": {
+      "en": "Cashmere Crew — made slowly in a small workshop, to be worn for years.",
+      "ar": "بلوفر كشمير برقبة دائرية — مصنوع على مهل في مشغل صغير، ليُلبس سنين."
+    },
+    "price": 7400,
+    "compareAt": null,
+    "badge": "new",
+    "colors": [
+      {
+        "id": "oat",
+        "label": {
+          "en": "Oat",
+          "ar": "شوفاني"
+        },
+        "swatch": "#D9CDB8",
+        "images": ["products/cashmere-crew/oat-1", "products/cashmere-crew/oat-2"]
+      },
+      {
+        "id": "camel",
+        "label": {
+          "en": "Camel",
+          "ar": "جملي"
+        },
+        "swatch": "#B48A5E",
+        "images": ["products/cashmere-crew/camel-1", "products/cashmere-crew/camel-2"]
+      },
+      {
+        "id": "grey",
+        "label": {
+          "en": "Grey Melange",
+          "ar": "رمادي مُبرقش"
+        },
+        "swatch": "#8E8A85",
+        "images": ["products/cashmere-crew/grey-1", "products/cashmere-crew/grey-2"]
+      },
+      {
+        "id": "black",
+        "label": {
+          "en": "Black",
+          "ar": "أسود"
+        },
+        "swatch": "#1F1C19",
+        "images": ["products/cashmere-crew/black-1", "products/cashmere-crew/black-2"]
+      },
+      {
+        "id": "ivory",
+        "label": {
+          "en": "Ivory",
+          "ar": "عاجي"
+        },
+        "swatch": "#EDE6DA",
+        "images": ["products/cashmere-crew/ivory-1", "products/cashmere-crew/ivory-2"]
+      },
+      {
+        "id": "rust",
+        "label": {
+          "en": "Rust",
+          "ar": "صدئي"
+        },
+        "swatch": "#8C4A2F",
+        "images": ["products/cashmere-crew/rust-1", "products/cashmere-crew/rust-2"]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "variants": [
+      {
+        "id": "cashmere-crew-oat-xs",
+        "color": "oat",
+        "size": "XS",
+        "stock": 3
+      },
+      {
+        "id": "cashmere-crew-oat-s",
+        "color": "oat",
+        "size": "S",
+        "stock": 3
+      },
+      {
+        "id": "cashmere-crew-oat-m",
+        "color": "oat",
+        "size": "M",
+        "stock": 1
+      },
+      {
+        "id": "cashmere-crew-oat-l",
+        "color": "oat",
+        "size": "L",
+        "stock": 8
+      },
+      {
+        "id": "cashmere-crew-oat-xl",
+        "color": "oat",
+        "size": "XL",
+        "stock": 2
+      },
+      {
+        "id": "cashmere-crew-camel-xs",
+        "color": "camel",
+        "size": "XS",
+        "stock": 8
+      },
+      {
+        "id": "cashmere-crew-camel-s",
+        "color": "camel",
+        "size": "S",
+        "stock": 4
+      },
+      {
+        "id": "cashmere-crew-camel-m",
+        "color": "camel",
+        "size": "M",
+        "stock": 2
+      },
+      {
+        "id": "cashmere-crew-camel-l",
+        "color": "camel",
+        "size": "L",
+        "stock": 5
+      },
+      {
+        "id": "cashmere-crew-camel-xl",
+        "color": "camel",
+        "size": "XL",
+        "stock": 4
+      },
+      {
+        "id": "cashmere-crew-grey-xs",
+        "color": "grey",
+        "size": "XS",
+        "stock": 7
+      },
+      {
+        "id": "cashmere-crew-grey-s",
+        "color": "grey",
+        "size": "S",
+        "stock": 6
+      },
+      {
+        "id": "cashmere-crew-grey-m",
+        "color": "grey",
+        "size": "M",
+        "stock": 2
+      },
+      {
+        "id": "cashmere-crew-grey-l",
+        "color": "grey",
+        "size": "L",
+        "stock": 2
+      },
+      {
+        "id": "cashmere-crew-grey-xl",
+        "color": "grey",
+        "size": "XL",
+        "stock": 4
+      },
+      {
+        "id": "cashmere-crew-black-xs",
+        "color": "black",
+        "size": "XS",
+        "stock": 1
+      },
+      {
+        "id": "cashmere-crew-black-s",
+        "color": "black",
+        "size": "S",
+        "stock": 1
+      },
+      {
+        "id": "cashmere-crew-black-m",
+        "color": "black",
+        "size": "M",
+        "stock": 4
+      },
+      {
+        "id": "cashmere-crew-black-l",
+        "color": "black",
+        "size": "L",
+        "stock": 6
+      },
+      {
+        "id": "cashmere-crew-black-xl",
+        "color": "black",
+        "size": "XL",
+        "stock": 6
+      },
+      {
+        "id": "cashmere-crew-ivory-xs",
+        "color": "ivory",
+        "size": "XS",
+        "stock": 8
+      },
+      {
+        "id": "cashmere-crew-ivory-s",
+        "color": "ivory",
+        "size": "S",
+        "stock": 3
+      },
+      {
+        "id": "cashmere-crew-ivory-m",
+        "color": "ivory",
+        "size": "M",
+        "stock": 4
+      },
+      {
+        "id": "cashmere-crew-ivory-l",
+        "color": "ivory",
+        "size": "L",
+        "stock": 4
+      },
+      {
+        "id": "cashmere-crew-ivory-xl",
+        "color": "ivory",
+        "size": "XL",
+        "stock": 4
+      },
+      {
+        "id": "cashmere-crew-rust-xs",
+        "color": "rust",
+        "size": "XS",
+        "stock": 0
+      },
+      {
+        "id": "cashmere-crew-rust-s",
+        "color": "rust",
+        "size": "S",
+        "stock": 0
+      },
+      {
+        "id": "cashmere-crew-rust-m",
+        "color": "rust",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "id": "cashmere-crew-rust-l",
+        "color": "rust",
+        "size": "L",
+        "stock": 0
+      },
+      {
+        "id": "cashmere-crew-rust-xl",
+        "color": "rust",
+        "size": "XL",
+        "stock": 0
+      }
+    ],
+    "material": {
+      "en": "Knitted from natural fibres, undyed where the colour allows.",
+      "ar": "محبوك من ألياف طبيعية، دون صباغة حيث يسمح اللون."
+    },
+    "care": {
+      "en": "Dry clean or hand wash cold. Dry flat, away from the sun.",
+      "ar": "تنظيف جاف أو غسيل يدوي بماء بارد. يُجفف مفروداً بعيداً عن الشمس."
+    },
+    "lookIds": [],
+    "related": ["wool-wrap-coat", "double-faced-cape", "quilted-linen-jacket"]
+  },
+  {
+    "handle": "ribbed-turtleneck",
+    "department": "women",
+    "category": "knitwear",
+    "title": {
+      "en": "Ribbed Turtleneck",
+      "ar": "بلوفر مضلّع برقبة عالية"
+    },
+    "description": {
+      "en": "Ribbed Turtleneck — made slowly in a small workshop, to be worn for years.",
+      "ar": "بلوفر مضلّع برقبة عالية — مصنوع على مهل في مشغل صغير، ليُلبس سنين."
+    },
+    "price": 5600,
+    "compareAt": null,
+    "badge": null,
+    "colors": [
+      {
+        "id": "ivory",
+        "label": {
+          "en": "Ivory",
+          "ar": "عاجي"
+        },
+        "swatch": "#EDE6DA",
+        "images": ["products/ribbed-turtleneck/ivory-1", "products/ribbed-turtleneck/ivory-2"]
+      },
+      {
+        "id": "charcoal",
+        "label": {
+          "en": "Charcoal",
+          "ar": "فحمي"
+        },
+        "swatch": "#3A3632",
+        "images": ["products/ribbed-turtleneck/charcoal-1", "products/ribbed-turtleneck/charcoal-2"]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "variants": [
+      {
+        "id": "ribbed-turtleneck-ivory-xs",
+        "color": "ivory",
+        "size": "XS",
+        "stock": 7
+      },
+      {
+        "id": "ribbed-turtleneck-ivory-s",
+        "color": "ivory",
+        "size": "S",
+        "stock": 4
+      },
+      {
+        "id": "ribbed-turtleneck-ivory-m",
+        "color": "ivory",
+        "size": "M",
+        "stock": 4
+      },
+      {
+        "id": "ribbed-turtleneck-ivory-l",
+        "color": "ivory",
+        "size": "L",
+        "stock": 3
+      },
+      {
+        "id": "ribbed-turtleneck-ivory-xl",
+        "color": "ivory",
+        "size": "XL",
+        "stock": 2
+      },
+      {
+        "id": "ribbed-turtleneck-charcoal-xs",
+        "color": "charcoal",
+        "size": "XS",
+        "stock": 6
+      },
+      {
+        "id": "ribbed-turtleneck-charcoal-s",
+        "color": "charcoal",
+        "size": "S",
+        "stock": 2
+      },
+      {
+        "id": "ribbed-turtleneck-charcoal-m",
+        "color": "charcoal",
+        "size": "M",
+        "stock": 3
+      },
+      {
+        "id": "ribbed-turtleneck-charcoal-l",
+        "color": "charcoal",
+        "size": "L",
+        "stock": 7
+      },
+      {
+        "id": "ribbed-turtleneck-charcoal-xl",
+        "color": "charcoal",
+        "size": "XL",
+        "stock": 7
+      }
+    ],
+    "material": {
+      "en": "Knitted from natural fibres, undyed where the colour allows.",
+      "ar": "محبوك من ألياف طبيعية، دون صباغة حيث يسمح اللون."
+    },
+    "care": {
+      "en": "Dry clean or hand wash cold. Dry flat, away from the sun.",
+      "ar": "تنظيف جاف أو غسيل يدوي بماء بارد. يُجفف مفروداً بعيداً عن الشمس."
+    },
+    "lookIds": [],
+    "related": ["wool-wrap-coat", "double-faced-cape", "quilted-linen-jacket"]
+  },
+  {
+    "handle": "mohair-cardigan",
+    "department": "women",
+    "category": "knitwear",
+    "title": {
+      "en": "Mohair Cardigan",
+      "ar": "كارديجان موهير"
+    },
+    "description": {
+      "en": "Mohair Cardigan — made slowly in a small workshop, to be worn for years.",
+      "ar": "كارديجان موهير — مصنوع على مهل في مشغل صغير، ليُلبس سنين."
+    },
+    "price": 6900,
+    "compareAt": 8600,
+    "badge": null,
+    "colors": [
+      {
+        "id": "sand",
+        "label": {
+          "en": "Sand",
+          "ar": "رملي"
+        },
+        "swatch": "#C9B48F",
+        "images": ["products/mohair-cardigan/sand-1", "products/mohair-cardigan/sand-2"]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "variants": [
+      {
+        "id": "mohair-cardigan-sand-xs",
+        "color": "sand",
+        "size": "XS",
+        "stock": 8
+      },
+      {
+        "id": "mohair-cardigan-sand-s",
+        "color": "sand",
+        "size": "S",
+        "stock": 8
+      },
+      {
+        "id": "mohair-cardigan-sand-m",
+        "color": "sand",
+        "size": "M",
+        "stock": 7
+      },
+      {
+        "id": "mohair-cardigan-sand-l",
+        "color": "sand",
+        "size": "L",
+        "stock": 6
+      },
+      {
+        "id": "mohair-cardigan-sand-xl",
+        "color": "sand",
+        "size": "XL",
+        "stock": 6
+      }
+    ],
+    "material": {
+      "en": "Knitted from natural fibres, undyed where the colour allows.",
+      "ar": "محبوك من ألياف طبيعية، دون صباغة حيث يسمح اللون."
+    },
+    "care": {
+      "en": "Dry clean or hand wash cold. Dry flat, away from the sun.",
+      "ar": "تنظيف جاف أو غسيل يدوي بماء بارد. يُجفف مفروداً بعيداً عن الشمس."
+    },
+    "lookIds": [],
+    "related": ["wool-wrap-coat", "double-faced-cape", "quilted-linen-jacket"]
+  },
+  {
+    "handle": "silk-slip-dress",
+    "department": "women",
+    "category": "dresses",
+    "title": {
+      "en": "Silk Slip Dress",
+      "ar": "فستان حرير ناعم"
+    },
+    "description": {
+      "en": "Silk Slip Dress — made slowly in a small workshop, to be worn for years.",
+      "ar": "فستان حرير ناعم — مصنوع على مهل في مشغل صغير، ليُلبس سنين."
+    },
+    "price": 8900,
+    "compareAt": null,
+    "badge": "new",
+    "colors": [
+      {
+        "id": "black",
+        "label": {
+          "en": "Black",
+          "ar": "أسود"
+        },
+        "swatch": "#1F1C19",
+        "images": ["products/silk-slip-dress/black-1", "products/silk-slip-dress/black-2"]
+      },
+      {
+        "id": "chocolate",
+        "label": {
+          "en": "Chocolate",
+          "ar": "شوكولاتة"
+        },
+        "swatch": "#5A3E2E",
+        "images": ["products/silk-slip-dress/chocolate-1", "products/silk-slip-dress/chocolate-2"]
+      },
+      {
+        "id": "ivory",
+        "label": {
+          "en": "Ivory",
+          "ar": "عاجي"
+        },
+        "swatch": "#EDE6DA",
+        "images": ["products/silk-slip-dress/ivory-1", "products/silk-slip-dress/ivory-2"]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "variants": [
+      {
+        "id": "silk-slip-dress-black-xs",
+        "color": "black",
+        "size": "XS",
+        "stock": 5
+      },
+      {
+        "id": "silk-slip-dress-black-s",
+        "color": "black",
+        "size": "S",
+        "stock": 1
+      },
+      {
+        "id": "silk-slip-dress-black-m",
+        "color": "black",
+        "size": "M",
+        "stock": 3
+      },
+      {
+        "id": "silk-slip-dress-black-l",
+        "color": "black",
+        "size": "L",
+        "stock": 3
+      },
+      {
+        "id": "silk-slip-dress-black-xl",
+        "color": "black",
+        "size": "XL",
+        "stock": 2
+      },
+      {
+        "id": "silk-slip-dress-chocolate-xs",
+        "color": "chocolate",
+        "size": "XS",
+        "stock": 4
+      },
+      {
+        "id": "silk-slip-dress-chocolate-s",
+        "color": "chocolate",
+        "size": "S",
+        "stock": 6
+      },
+      {
+        "id": "silk-slip-dress-chocolate-m",
+        "color": "chocolate",
+        "size": "M",
+        "stock": 6
+      },
+      {
+        "id": "silk-slip-dress-chocolate-l",
+        "color": "chocolate",
+        "size": "L",
+        "stock": 3
+      },
+      {
+        "id": "silk-slip-dress-chocolate-xl",
+        "color": "chocolate",
+        "size": "XL",
+        "stock": 8
+      },
+      {
+        "id": "silk-slip-dress-ivory-xs",
+        "color": "ivory",
+        "size": "XS",
+        "stock": 1
+      },
+      {
+        "id": "silk-slip-dress-ivory-s",
+        "color": "ivory",
+        "size": "S",
+        "stock": 3
+      },
+      {
+        "id": "silk-slip-dress-ivory-m",
+        "color": "ivory",
+        "size": "M",
+        "stock": 5
+      },
+      {
+        "id": "silk-slip-dress-ivory-l",
+        "color": "ivory",
+        "size": "L",
+        "stock": 4
+      },
+      {
+        "id": "silk-slip-dress-ivory-xl",
+        "color": "ivory",
+        "size": "XL",
+        "stock": 1
+      }
+    ],
+    "material": {
+      "en": "Natural fibres, cut on the straight grain.",
+      "ar": "ألياف طبيعية، مقصوصة على استقامة النسيج."
+    },
+    "care": {
+      "en": "Dry clean or hand wash cold. Dry flat, away from the sun.",
+      "ar": "تنظيف جاف أو غسيل يدوي بماء بارد. يُجفف مفروداً بعيداً عن الشمس."
+    },
+    "lookIds": [],
+    "related": ["wool-wrap-coat", "double-faced-cape", "quilted-linen-jacket"]
+  },
+  {
+    "handle": "linen-shirt-dress",
+    "department": "women",
+    "category": "dresses",
+    "title": {
+      "en": "Linen Shirt Dress",
+      "ar": "فستان قميص كتان"
+    },
+    "description": {
+      "en": "Linen Shirt Dress — made slowly in a small workshop, to be worn for years.",
+      "ar": "فستان قميص كتان — مصنوع على مهل في مشغل صغير، ليُلبس سنين."
+    },
+    "price": 6400,
+    "compareAt": null,
+    "badge": null,
+    "colors": [
+      {
+        "id": "stone",
+        "label": {
+          "en": "Stone",
+          "ar": "حجري"
+        },
+        "swatch": "#A9A091",
+        "images": ["products/linen-shirt-dress/stone-1"]
+      },
+      {
+        "id": "navy",
+        "label": {
+          "en": "Navy",
+          "ar": "كحلي"
+        },
+        "swatch": "#2C3442",
+        "images": ["products/linen-shirt-dress/navy-1"]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "variants": [
+      {
+        "id": "linen-shirt-dress-stone-xs",
+        "color": "stone",
+        "size": "XS",
+        "stock": 8
+      },
+      {
+        "id": "linen-shirt-dress-stone-s",
+        "color": "stone",
+        "size": "S",
+        "stock": 4
+      },
+      {
+        "id": "linen-shirt-dress-stone-m",
+        "color": "stone",
+        "size": "M",
+        "stock": 7
+      },
+      {
+        "id": "linen-shirt-dress-stone-l",
+        "color": "stone",
+        "size": "L",
+        "stock": 5
+      },
+      {
+        "id": "linen-shirt-dress-stone-xl",
+        "color": "stone",
+        "size": "XL",
+        "stock": 4
+      },
+      {
+        "id": "linen-shirt-dress-navy-xs",
+        "color": "navy",
+        "size": "XS",
+        "stock": 2
+      },
+      {
+        "id": "linen-shirt-dress-navy-s",
+        "color": "navy",
+        "size": "S",
+        "stock": 7
+      },
+      {
+        "id": "linen-shirt-dress-navy-m",
+        "color": "navy",
+        "size": "M",
+        "stock": 8
+      },
+      {
+        "id": "linen-shirt-dress-navy-l",
+        "color": "navy",
+        "size": "L",
+        "stock": 3
+      },
+      {
+        "id": "linen-shirt-dress-navy-xl",
+        "color": "navy",
+        "size": "XL",
+        "stock": 1
+      }
+    ],
+    "material": {
+      "en": "Natural fibres, cut on the straight grain.",
+      "ar": "ألياف طبيعية، مقصوصة على استقامة النسيج."
+    },
+    "care": {
+      "en": "Dry clean or hand wash cold. Dry flat, away from the sun.",
+      "ar": "تنظيف جاف أو غسيل يدوي بماء بارد. يُجفف مفروداً بعيداً عن الشمس."
+    },
+    "lookIds": [],
+    "related": ["wool-wrap-coat", "double-faced-cape", "quilted-linen-jacket"]
+  },
+  {
+    "handle": "wool-column-dress",
+    "department": "women",
+    "category": "dresses",
+    "title": {
+      "en": "Wool Column Dress",
+      "ar": "فستان صوف مستقيم"
+    },
+    "description": {
+      "en": "Wool Column Dress — made slowly in a small workshop, to be worn for years.",
+      "ar": "فستان صوف مستقيم — مصنوع على مهل في مشغل صغير، ليُلبس سنين."
+    },
+    "price": 11200,
+    "compareAt": null,
+    "badge": null,
+    "colors": [
+      {
+        "id": "charcoal",
+        "label": {
+          "en": "Charcoal",
+          "ar": "فحمي"
+        },
+        "swatch": "#3A3632",
+        "images": ["products/wool-column-dress/charcoal-1", "products/wool-column-dress/charcoal-2"]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "variants": [
+      {
+        "id": "wool-column-dress-charcoal-xs",
+        "color": "charcoal",
+        "size": "XS",
+        "stock": 0
+      },
+      {
+        "id": "wool-column-dress-charcoal-s",
+        "color": "charcoal",
+        "size": "S",
+        "stock": 0
+      },
+      {
+        "id": "wool-column-dress-charcoal-m",
+        "color": "charcoal",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "id": "wool-column-dress-charcoal-l",
+        "color": "charcoal",
+        "size": "L",
+        "stock": 0
+      },
+      {
+        "id": "wool-column-dress-charcoal-xl",
+        "color": "charcoal",
+        "size": "XL",
+        "stock": 0
+      }
+    ],
+    "material": {
+      "en": "Natural fibres, cut on the straight grain.",
+      "ar": "ألياف طبيعية، مقصوصة على استقامة النسيج."
+    },
+    "care": {
+      "en": "Dry clean or hand wash cold. Dry flat, away from the sun.",
+      "ar": "تنظيف جاف أو غسيل يدوي بماء بارد. يُجفف مفروداً بعيداً عن الشمس."
+    },
+    "lookIds": [],
+    "related": ["wool-wrap-coat", "double-faced-cape", "quilted-linen-jacket"]
+  },
+  {
+    "handle": "pleated-wool-trouser",
+    "department": "women",
+    "category": "trousers",
+    "title": {
+      "en": "Pleated Wool Trouser",
+      "ar": "بنطلون صوف بكسرات"
+    },
+    "description": {
+      "en": "Pleated Wool Trouser — made slowly in a small workshop, to be worn for years.",
+      "ar": "بنطلون صوف بكسرات — مصنوع على مهل في مشغل صغير، ليُلبس سنين."
+    },
+    "price": 5900,
+    "compareAt": null,
+    "badge": "new",
+    "colors": [
+      {
+        "id": "camel",
+        "label": {
+          "en": "Camel",
+          "ar": "جملي"
+        },
+        "swatch": "#B48A5E",
+        "images": ["products/pleated-wool-trouser/camel-1", "products/pleated-wool-trouser/camel-2"]
+      },
+      {
+        "id": "black",
+        "label": {
+          "en": "Black",
+          "ar": "أسود"
+        },
+        "swatch": "#1F1C19",
+        "images": ["products/pleated-wool-trouser/black-1", "products/pleated-wool-trouser/black-2"]
+      },
+      {
+        "id": "grey",
+        "label": {
+          "en": "Grey Melange",
+          "ar": "رمادي مُبرقش"
+        },
+        "swatch": "#8E8A85",
+        "images": ["products/pleated-wool-trouser/grey-1", "products/pleated-wool-trouser/grey-2"]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "variants": [
+      {
+        "id": "pleated-wool-trouser-camel-xs",
+        "color": "camel",
+        "size": "XS",
+        "stock": 2
+      },
+      {
+        "id": "pleated-wool-trouser-camel-s",
+        "color": "camel",
+        "size": "S",
+        "stock": 6
+      },
+      {
+        "id": "pleated-wool-trouser-camel-m",
+        "color": "camel",
+        "size": "M",
+        "stock": 6
+      },
+      {
+        "id": "pleated-wool-trouser-camel-l",
+        "color": "camel",
+        "size": "L",
+        "stock": 6
+      },
+      {
+        "id": "pleated-wool-trouser-camel-xl",
+        "color": "camel",
+        "size": "XL",
+        "stock": 7
+      },
+      {
+        "id": "pleated-wool-trouser-black-xs",
+        "color": "black",
+        "size": "XS",
+        "stock": 2
+      },
+      {
+        "id": "pleated-wool-trouser-black-s",
+        "color": "black",
+        "size": "S",
+        "stock": 7
+      },
+      {
+        "id": "pleated-wool-trouser-black-m",
+        "color": "black",
+        "size": "M",
+        "stock": 2
+      },
+      {
+        "id": "pleated-wool-trouser-black-l",
+        "color": "black",
+        "size": "L",
+        "stock": 1
+      },
+      {
+        "id": "pleated-wool-trouser-black-xl",
+        "color": "black",
+        "size": "XL",
+        "stock": 1
+      },
+      {
+        "id": "pleated-wool-trouser-grey-xs",
+        "color": "grey",
+        "size": "XS",
+        "stock": 1
+      },
+      {
+        "id": "pleated-wool-trouser-grey-s",
+        "color": "grey",
+        "size": "S",
+        "stock": 5
+      },
+      {
+        "id": "pleated-wool-trouser-grey-m",
+        "color": "grey",
+        "size": "M",
+        "stock": 7
+      },
+      {
+        "id": "pleated-wool-trouser-grey-l",
+        "color": "grey",
+        "size": "L",
+        "stock": 7
+      },
+      {
+        "id": "pleated-wool-trouser-grey-xl",
+        "color": "grey",
+        "size": "XL",
+        "stock": 2
+      }
+    ],
+    "material": {
+      "en": "Woven natural fibres with a horn button closure.",
+      "ar": "ألياف طبيعية منسوجة وزر من القرن."
+    },
+    "care": {
+      "en": "Dry clean or hand wash cold. Dry flat, away from the sun.",
+      "ar": "تنظيف جاف أو غسيل يدوي بماء بارد. يُجفف مفروداً بعيداً عن الشمس."
+    },
+    "lookIds": [],
+    "related": ["wool-wrap-coat", "double-faced-cape", "quilted-linen-jacket"]
+  },
+  {
+    "handle": "wide-linen-trouser",
+    "department": "women",
+    "category": "trousers",
+    "title": {
+      "en": "Wide Linen Trouser",
+      "ar": "بنطلون كتان واسع"
+    },
+    "description": {
+      "en": "Wide Linen Trouser — made slowly in a small workshop, to be worn for years.",
+      "ar": "بنطلون كتان واسع — مصنوع على مهل في مشغل صغير، ليُلبس سنين."
+    },
+    "price": 4800,
+    "compareAt": null,
+    "badge": null,
+    "colors": [
+      {
+        "id": "ivory",
+        "label": {
+          "en": "Ivory",
+          "ar": "عاجي"
+        },
+        "swatch": "#EDE6DA",
+        "images": ["products/wide-linen-trouser/ivory-1", "products/wide-linen-trouser/ivory-2"]
+      },
+      {
+        "id": "olive",
+        "label": {
+          "en": "Olive",
+          "ar": "زيتوني"
+        },
+        "swatch": "#6B6A4B",
+        "images": ["products/wide-linen-trouser/olive-1", "products/wide-linen-trouser/olive-2"]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "variants": [
+      {
+        "id": "wide-linen-trouser-ivory-xs",
+        "color": "ivory",
+        "size": "XS",
+        "stock": 4
+      },
+      {
+        "id": "wide-linen-trouser-ivory-s",
+        "color": "ivory",
+        "size": "S",
+        "stock": 1
+      },
+      {
+        "id": "wide-linen-trouser-ivory-m",
+        "color": "ivory",
+        "size": "M",
+        "stock": 3
+      },
+      {
+        "id": "wide-linen-trouser-ivory-l",
+        "color": "ivory",
+        "size": "L",
+        "stock": 4
+      },
+      {
+        "id": "wide-linen-trouser-ivory-xl",
+        "color": "ivory",
+        "size": "XL",
+        "stock": 1
+      },
+      {
+        "id": "wide-linen-trouser-olive-xs",
+        "color": "olive",
+        "size": "XS",
+        "stock": 3
+      },
+      {
+        "id": "wide-linen-trouser-olive-s",
+        "color": "olive",
+        "size": "S",
+        "stock": 2
+      },
+      {
+        "id": "wide-linen-trouser-olive-m",
+        "color": "olive",
+        "size": "M",
+        "stock": 3
+      },
+      {
+        "id": "wide-linen-trouser-olive-l",
+        "color": "olive",
+        "size": "L",
+        "stock": 7
+      },
+      {
+        "id": "wide-linen-trouser-olive-xl",
+        "color": "olive",
+        "size": "XL",
+        "stock": 2
+      }
+    ],
+    "material": {
+      "en": "Woven natural fibres with a horn button closure.",
+      "ar": "ألياف طبيعية منسوجة وزر من القرن."
+    },
+    "care": {
+      "en": "Dry clean or hand wash cold. Dry flat, away from the sun.",
+      "ar": "تنظيف جاف أو غسيل يدوي بماء بارد. يُجفف مفروداً بعيداً عن الشمس."
+    },
+    "lookIds": [],
+    "related": ["wool-wrap-coat", "double-faced-cape", "quilted-linen-jacket"]
+  },
+  {
+    "handle": "leather-tote",
+    "department": "women",
+    "category": "accessories",
+    "title": {
+      "en": "Leather Tote",
+      "ar": "حقيبة جلد"
+    },
+    "description": {
+      "en": "Leather Tote — made slowly in a small workshop, to be worn for years.",
+      "ar": "حقيبة جلد — مصنوع على مهل في مشغل صغير، ليُلبس سنين."
+    },
+    "price": 9500,
+    "compareAt": null,
+    "badge": null,
+    "colors": [
+      {
+        "id": "chocolate",
+        "label": {
+          "en": "Chocolate",
+          "ar": "شوكولاتة"
+        },
+        "swatch": "#5A3E2E",
+        "images": ["products/leather-tote/chocolate-1", "products/leather-tote/chocolate-2"]
+      },
+      {
+        "id": "black",
+        "label": {
+          "en": "Black",
+          "ar": "أسود"
+        },
+        "swatch": "#1F1C19",
+        "images": ["products/leather-tote/black-1", "products/leather-tote/black-2"]
+      }
+    ],
+    "sizes": ["ONE"],
+    "variants": [
+      {
+        "id": "leather-tote-chocolate-one",
+        "color": "chocolate",
+        "size": "ONE",
+        "stock": 2
+      },
+      {
+        "id": "leather-tote-black-one",
+        "color": "black",
+        "size": "ONE",
+        "stock": 1
+      }
+    ],
+    "material": {
+      "en": "Vegetable-tanned leather or pure cashmere.",
+      "ar": "جلد مدبوغ نباتياً أو كشمير خالص."
+    },
+    "care": {
+      "en": "Dry clean or hand wash cold. Dry flat, away from the sun.",
+      "ar": "تنظيف جاف أو غسيل يدوي بماء بارد. يُجفف مفروداً بعيداً عن الشمس."
+    },
+    "lookIds": [],
+    "related": ["wool-wrap-coat", "double-faced-cape", "quilted-linen-jacket"]
+  },
+  {
+    "handle": "wool-overcoat",
+    "department": "men",
+    "category": "outerwear",
+    "title": {
+      "en": "Wool Overcoat",
+      "ar": "معطف صوف طويل"
+    },
+    "description": {
+      "en": "Wool Overcoat — made slowly in a small workshop, to be worn for years.",
+      "ar": "معطف صوف طويل — مصنوع على مهل في مشغل صغير، ليُلبس سنين."
+    },
+    "price": 19800,
+    "compareAt": null,
+    "badge": "new",
+    "colors": [
+      {
+        "id": "charcoal",
+        "label": {
+          "en": "Charcoal",
+          "ar": "فحمي"
+        },
+        "swatch": "#3A3632",
+        "images": ["products/wool-overcoat/charcoal-1", "products/wool-overcoat/charcoal-2"]
+      },
+      {
+        "id": "camel",
+        "label": {
+          "en": "Camel",
+          "ar": "جملي"
+        },
+        "swatch": "#B48A5E",
+        "images": ["products/wool-overcoat/camel-1", "products/wool-overcoat/camel-2"]
+      },
+      {
+        "id": "navy",
+        "label": {
+          "en": "Navy",
+          "ar": "كحلي"
+        },
+        "swatch": "#2C3442",
+        "images": ["products/wool-overcoat/navy-1", "products/wool-overcoat/navy-2"]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "variants": [
+      {
+        "id": "wool-overcoat-charcoal-xs",
+        "color": "charcoal",
+        "size": "XS",
+        "stock": 5
+      },
+      {
+        "id": "wool-overcoat-charcoal-s",
+        "color": "charcoal",
+        "size": "S",
+        "stock": 1
+      },
+      {
+        "id": "wool-overcoat-charcoal-m",
+        "color": "charcoal",
+        "size": "M",
+        "stock": 4
+      },
+      {
+        "id": "wool-overcoat-charcoal-l",
+        "color": "charcoal",
+        "size": "L",
+        "stock": 1
+      },
+      {
+        "id": "wool-overcoat-charcoal-xl",
+        "color": "charcoal",
+        "size": "XL",
+        "stock": 4
+      },
+      {
+        "id": "wool-overcoat-camel-xs",
+        "color": "camel",
+        "size": "XS",
+        "stock": 4
+      },
+      {
+        "id": "wool-overcoat-camel-s",
+        "color": "camel",
+        "size": "S",
+        "stock": 1
+      },
+      {
+        "id": "wool-overcoat-camel-m",
+        "color": "camel",
+        "size": "M",
+        "stock": 7
+      },
+      {
+        "id": "wool-overcoat-camel-l",
+        "color": "camel",
+        "size": "L",
+        "stock": 4
+      },
+      {
+        "id": "wool-overcoat-camel-xl",
+        "color": "camel",
+        "size": "XL",
+        "stock": 6
+      },
+      {
+        "id": "wool-overcoat-navy-xs",
+        "color": "navy",
+        "size": "XS",
+        "stock": 3
+      },
+      {
+        "id": "wool-overcoat-navy-s",
+        "color": "navy",
+        "size": "S",
+        "stock": 8
+      },
+      {
+        "id": "wool-overcoat-navy-m",
+        "color": "navy",
+        "size": "M",
+        "stock": 6
+      },
+      {
+        "id": "wool-overcoat-navy-l",
+        "color": "navy",
+        "size": "L",
+        "stock": 6
+      },
+      {
+        "id": "wool-overcoat-navy-xl",
+        "color": "navy",
+        "size": "XL",
+        "stock": 3
+      }
+    ],
+    "material": {
+      "en": "Outer: 100% wool from a family mill. Lining: cupro.",
+      "ar": "الخارج: صوف ١٠٠٪ من مغزل عائلي. البطانة: كوبرو."
+    },
+    "care": {
+      "en": "Dry clean or hand wash cold. Dry flat, away from the sun.",
+      "ar": "تنظيف جاف أو غسيل يدوي بماء بارد. يُجفف مفروداً بعيداً عن الشمس."
+    },
+    "lookIds": [],
+    "related": ["waxed-field-jacket", "suede-overshirt", "merino-polo"]
+  },
+  {
+    "handle": "waxed-field-jacket",
+    "department": "men",
+    "category": "outerwear",
+    "title": {
+      "en": "Waxed Field Jacket",
+      "ar": "جاكيت حقل مشمّع"
+    },
+    "description": {
+      "en": "Waxed Field Jacket — made slowly in a small workshop, to be worn for years.",
+      "ar": "جاكيت حقل مشمّع — مصنوع على مهل في مشغل صغير، ليُلبس سنين."
+    },
+    "price": 12400,
+    "compareAt": 15500,
+    "badge": null,
+    "colors": [
+      {
+        "id": "olive",
+        "label": {
+          "en": "Olive",
+          "ar": "زيتوني"
+        },
+        "swatch": "#6B6A4B",
+        "images": ["products/waxed-field-jacket/olive-1", "products/waxed-field-jacket/olive-2"]
+      },
+      {
+        "id": "black",
+        "label": {
+          "en": "Black",
+          "ar": "أسود"
+        },
+        "swatch": "#1F1C19",
+        "images": ["products/waxed-field-jacket/black-1", "products/waxed-field-jacket/black-2"]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "variants": [
+      {
+        "id": "waxed-field-jacket-olive-xs",
+        "color": "olive",
+        "size": "XS",
+        "stock": 3
+      },
+      {
+        "id": "waxed-field-jacket-olive-s",
+        "color": "olive",
+        "size": "S",
+        "stock": 1
+      },
+      {
+        "id": "waxed-field-jacket-olive-m",
+        "color": "olive",
+        "size": "M",
+        "stock": 8
+      },
+      {
+        "id": "waxed-field-jacket-olive-l",
+        "color": "olive",
+        "size": "L",
+        "stock": 1
+      },
+      {
+        "id": "waxed-field-jacket-olive-xl",
+        "color": "olive",
+        "size": "XL",
+        "stock": 1
+      },
+      {
+        "id": "waxed-field-jacket-black-xs",
+        "color": "black",
+        "size": "XS",
+        "stock": 2
+      },
+      {
+        "id": "waxed-field-jacket-black-s",
+        "color": "black",
+        "size": "S",
+        "stock": 3
+      },
+      {
+        "id": "waxed-field-jacket-black-m",
+        "color": "black",
+        "size": "M",
+        "stock": 1
+      },
+      {
+        "id": "waxed-field-jacket-black-l",
+        "color": "black",
+        "size": "L",
+        "stock": 5
+      },
+      {
+        "id": "waxed-field-jacket-black-xl",
+        "color": "black",
+        "size": "XL",
+        "stock": 4
+      }
+    ],
+    "material": {
+      "en": "Outer: 100% wool from a family mill. Lining: cupro.",
+      "ar": "الخارج: صوف ١٠٠٪ من مغزل عائلي. البطانة: كوبرو."
+    },
+    "care": {
+      "en": "Dry clean or hand wash cold. Dry flat, away from the sun.",
+      "ar": "تنظيف جاف أو غسيل يدوي بماء بارد. يُجفف مفروداً بعيداً عن الشمس."
+    },
+    "lookIds": [],
+    "related": ["wool-overcoat", "suede-overshirt", "merino-polo"]
+  },
+  {
+    "handle": "suede-overshirt",
+    "department": "men",
+    "category": "outerwear",
+    "title": {
+      "en": "Suede Overshirt",
+      "ar": "قميص سويد علوي"
+    },
+    "description": {
+      "en": "Suede Overshirt — made slowly in a small workshop, to be worn for years.",
+      "ar": "قميص سويد علوي — مصنوع على مهل في مشغل صغير، ليُلبس سنين."
+    },
+    "price": 13600,
+    "compareAt": null,
+    "badge": null,
+    "colors": [
+      {
+        "id": "chocolate",
+        "label": {
+          "en": "Chocolate",
+          "ar": "شوكولاتة"
+        },
+        "swatch": "#5A3E2E",
+        "images": ["products/suede-overshirt/chocolate-1", "products/suede-overshirt/chocolate-2"]
+      },
+      {
+        "id": "sand",
+        "label": {
+          "en": "Sand",
+          "ar": "رملي"
+        },
+        "swatch": "#C9B48F",
+        "images": ["products/suede-overshirt/sand-1", "products/suede-overshirt/sand-2"]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "variants": [
+      {
+        "id": "suede-overshirt-chocolate-xs",
+        "color": "chocolate",
+        "size": "XS",
+        "stock": 4
+      },
+      {
+        "id": "suede-overshirt-chocolate-s",
+        "color": "chocolate",
+        "size": "S",
+        "stock": 5
+      },
+      {
+        "id": "suede-overshirt-chocolate-m",
+        "color": "chocolate",
+        "size": "M",
+        "stock": 8
+      },
+      {
+        "id": "suede-overshirt-chocolate-l",
+        "color": "chocolate",
+        "size": "L",
+        "stock": 5
+      },
+      {
+        "id": "suede-overshirt-chocolate-xl",
+        "color": "chocolate",
+        "size": "XL",
+        "stock": 4
+      },
+      {
+        "id": "suede-overshirt-sand-xs",
+        "color": "sand",
+        "size": "XS",
+        "stock": 1
+      },
+      {
+        "id": "suede-overshirt-sand-s",
+        "color": "sand",
+        "size": "S",
+        "stock": 8
+      },
+      {
+        "id": "suede-overshirt-sand-m",
+        "color": "sand",
+        "size": "M",
+        "stock": 6
+      },
+      {
+        "id": "suede-overshirt-sand-l",
+        "color": "sand",
+        "size": "L",
+        "stock": 4
+      },
+      {
+        "id": "suede-overshirt-sand-xl",
+        "color": "sand",
+        "size": "XL",
+        "stock": 8
+      }
+    ],
+    "material": {
+      "en": "Outer: 100% wool from a family mill. Lining: cupro.",
+      "ar": "الخارج: صوف ١٠٠٪ من مغزل عائلي. البطانة: كوبرو."
+    },
+    "care": {
+      "en": "Dry clean or hand wash cold. Dry flat, away from the sun.",
+      "ar": "تنظيف جاف أو غسيل يدوي بماء بارد. يُجفف مفروداً بعيداً عن الشمس."
+    },
+    "lookIds": [],
+    "related": ["wool-overcoat", "waxed-field-jacket", "merino-polo"]
+  },
+  {
+    "handle": "merino-polo",
+    "department": "men",
+    "category": "knitwear",
+    "title": {
+      "en": "Merino Polo",
+      "ar": "بولو ميرينو"
+    },
+    "description": {
+      "en": "Merino Polo — made slowly in a small workshop, to be worn for years.",
+      "ar": "بولو ميرينو — مصنوع على مهل في مشغل صغير، ليُلبس سنين."
+    },
+    "price": 4900,
+    "compareAt": null,
+    "badge": "new",
+    "colors": [
+      {
+        "id": "navy",
+        "label": {
+          "en": "Navy",
+          "ar": "كحلي"
+        },
+        "swatch": "#2C3442",
+        "images": ["products/merino-polo/navy-1", "products/merino-polo/navy-2"]
+      },
+      {
+        "id": "oat",
+        "label": {
+          "en": "Oat",
+          "ar": "شوفاني"
+        },
+        "swatch": "#D9CDB8",
+        "images": ["products/merino-polo/oat-1", "products/merino-polo/oat-2"]
+      },
+      {
+        "id": "charcoal",
+        "label": {
+          "en": "Charcoal",
+          "ar": "فحمي"
+        },
+        "swatch": "#3A3632",
+        "images": ["products/merino-polo/charcoal-1", "products/merino-polo/charcoal-2"]
+      },
+      {
+        "id": "olive",
+        "label": {
+          "en": "Olive",
+          "ar": "زيتوني"
+        },
+        "swatch": "#6B6A4B",
+        "images": ["products/merino-polo/olive-1", "products/merino-polo/olive-2"]
+      },
+      {
+        "id": "rust",
+        "label": {
+          "en": "Rust",
+          "ar": "صدئي"
+        },
+        "swatch": "#8C4A2F",
+        "images": ["products/merino-polo/rust-1", "products/merino-polo/rust-2"]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "variants": [
+      {
+        "id": "merino-polo-navy-xs",
+        "color": "navy",
+        "size": "XS",
+        "stock": 6
+      },
+      {
+        "id": "merino-polo-navy-s",
+        "color": "navy",
+        "size": "S",
+        "stock": 4
+      },
+      {
+        "id": "merino-polo-navy-m",
+        "color": "navy",
+        "size": "M",
+        "stock": 8
+      },
+      {
+        "id": "merino-polo-navy-l",
+        "color": "navy",
+        "size": "L",
+        "stock": 8
+      },
+      {
+        "id": "merino-polo-navy-xl",
+        "color": "navy",
+        "size": "XL",
+        "stock": 4
+      },
+      {
+        "id": "merino-polo-oat-xs",
+        "color": "oat",
+        "size": "XS",
+        "stock": 4
+      },
+      {
+        "id": "merino-polo-oat-s",
+        "color": "oat",
+        "size": "S",
+        "stock": 6
+      },
+      {
+        "id": "merino-polo-oat-m",
+        "color": "oat",
+        "size": "M",
+        "stock": 7
+      },
+      {
+        "id": "merino-polo-oat-l",
+        "color": "oat",
+        "size": "L",
+        "stock": 8
+      },
+      {
+        "id": "merino-polo-oat-xl",
+        "color": "oat",
+        "size": "XL",
+        "stock": 5
+      },
+      {
+        "id": "merino-polo-charcoal-xs",
+        "color": "charcoal",
+        "size": "XS",
+        "stock": 8
+      },
+      {
+        "id": "merino-polo-charcoal-s",
+        "color": "charcoal",
+        "size": "S",
+        "stock": 6
+      },
+      {
+        "id": "merino-polo-charcoal-m",
+        "color": "charcoal",
+        "size": "M",
+        "stock": 7
+      },
+      {
+        "id": "merino-polo-charcoal-l",
+        "color": "charcoal",
+        "size": "L",
+        "stock": 4
+      },
+      {
+        "id": "merino-polo-charcoal-xl",
+        "color": "charcoal",
+        "size": "XL",
+        "stock": 1
+      },
+      {
+        "id": "merino-polo-olive-xs",
+        "color": "olive",
+        "size": "XS",
+        "stock": 8
+      },
+      {
+        "id": "merino-polo-olive-s",
+        "color": "olive",
+        "size": "S",
+        "stock": 5
+      },
+      {
+        "id": "merino-polo-olive-m",
+        "color": "olive",
+        "size": "M",
+        "stock": 6
+      },
+      {
+        "id": "merino-polo-olive-l",
+        "color": "olive",
+        "size": "L",
+        "stock": 4
+      },
+      {
+        "id": "merino-polo-olive-xl",
+        "color": "olive",
+        "size": "XL",
+        "stock": 7
+      },
+      {
+        "id": "merino-polo-rust-xs",
+        "color": "rust",
+        "size": "XS",
+        "stock": 7
+      },
+      {
+        "id": "merino-polo-rust-s",
+        "color": "rust",
+        "size": "S",
+        "stock": 5
+      },
+      {
+        "id": "merino-polo-rust-m",
+        "color": "rust",
+        "size": "M",
+        "stock": 4
+      },
+      {
+        "id": "merino-polo-rust-l",
+        "color": "rust",
+        "size": "L",
+        "stock": 8
+      },
+      {
+        "id": "merino-polo-rust-xl",
+        "color": "rust",
+        "size": "XL",
+        "stock": 6
+      }
+    ],
+    "material": {
+      "en": "Knitted from natural fibres, undyed where the colour allows.",
+      "ar": "محبوك من ألياف طبيعية، دون صباغة حيث يسمح اللون."
+    },
+    "care": {
+      "en": "Dry clean or hand wash cold. Dry flat, away from the sun.",
+      "ar": "تنظيف جاف أو غسيل يدوي بماء بارد. يُجفف مفروداً بعيداً عن الشمس."
+    },
+    "lookIds": [],
+    "related": ["wool-overcoat", "waxed-field-jacket", "suede-overshirt"]
+  },
+  {
+    "handle": "shawl-collar-cardigan",
+    "department": "men",
+    "category": "knitwear",
+    "title": {
+      "en": "Shawl Collar Cardigan",
+      "ar": "كارديجان بياقة شال"
+    },
+    "description": {
+      "en": "Shawl Collar Cardigan — made slowly in a small workshop, to be worn for years.",
+      "ar": "كارديجان بياقة شال — مصنوع على مهل في مشغل صغير، ليُلبس سنين."
+    },
+    "price": 7800,
+    "compareAt": null,
+    "badge": null,
+    "colors": [
+      {
+        "id": "grey",
+        "label": {
+          "en": "Grey Melange",
+          "ar": "رمادي مُبرقش"
+        },
+        "swatch": "#8E8A85",
+        "images": ["products/shawl-collar-cardigan/grey-1", "products/shawl-collar-cardigan/grey-2"]
+      },
+      {
+        "id": "chocolate",
+        "label": {
+          "en": "Chocolate",
+          "ar": "شوكولاتة"
+        },
+        "swatch": "#5A3E2E",
+        "images": ["products/shawl-collar-cardigan/chocolate-1", "products/shawl-collar-cardigan/chocolate-2"]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "variants": [
+      {
+        "id": "shawl-collar-cardigan-grey-xs",
+        "color": "grey",
+        "size": "XS",
+        "stock": 1
+      },
+      {
+        "id": "shawl-collar-cardigan-grey-s",
+        "color": "grey",
+        "size": "S",
+        "stock": 3
+      },
+      {
+        "id": "shawl-collar-cardigan-grey-m",
+        "color": "grey",
+        "size": "M",
+        "stock": 4
+      },
+      {
+        "id": "shawl-collar-cardigan-grey-l",
+        "color": "grey",
+        "size": "L",
+        "stock": 8
+      },
+      {
+        "id": "shawl-collar-cardigan-grey-xl",
+        "color": "grey",
+        "size": "XL",
+        "stock": 6
+      },
+      {
+        "id": "shawl-collar-cardigan-chocolate-xs",
+        "color": "chocolate",
+        "size": "XS",
+        "stock": 2
+      },
+      {
+        "id": "shawl-collar-cardigan-chocolate-s",
+        "color": "chocolate",
+        "size": "S",
+        "stock": 6
+      },
+      {
+        "id": "shawl-collar-cardigan-chocolate-m",
+        "color": "chocolate",
+        "size": "M",
+        "stock": 2
+      },
+      {
+        "id": "shawl-collar-cardigan-chocolate-l",
+        "color": "chocolate",
+        "size": "L",
+        "stock": 2
+      },
+      {
+        "id": "shawl-collar-cardigan-chocolate-xl",
+        "color": "chocolate",
+        "size": "XL",
+        "stock": 5
+      }
+    ],
+    "material": {
+      "en": "Knitted from natural fibres, undyed where the colour allows.",
+      "ar": "محبوك من ألياف طبيعية، دون صباغة حيث يسمح اللون."
+    },
+    "care": {
+      "en": "Dry clean or hand wash cold. Dry flat, away from the sun.",
+      "ar": "تنظيف جاف أو غسيل يدوي بماء بارد. يُجفف مفروداً بعيداً عن الشمس."
+    },
+    "lookIds": [],
+    "related": ["wool-overcoat", "waxed-field-jacket", "suede-overshirt"]
+  },
+  {
+    "handle": "cable-knit-sweater",
+    "department": "men",
+    "category": "knitwear",
+    "title": {
+      "en": "Cable Knit Sweater",
+      "ar": "بلوفر تريكو مجدول"
+    },
+    "description": {
+      "en": "Cable Knit Sweater — made slowly in a small workshop, to be worn for years.",
+      "ar": "بلوفر تريكو مجدول — مصنوع على مهل في مشغل صغير، ليُلبس سنين."
+    },
+    "price": 6600,
+    "compareAt": 8250,
+    "badge": null,
+    "colors": [
+      {
+        "id": "ivory",
+        "label": {
+          "en": "Ivory",
+          "ar": "عاجي"
+        },
+        "swatch": "#EDE6DA",
+        "images": ["products/cable-knit-sweater/ivory-1", "products/cable-knit-sweater/ivory-2"]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "variants": [
+      {
+        "id": "cable-knit-sweater-ivory-xs",
+        "color": "ivory",
+        "size": "XS",
+        "stock": 3
+      },
+      {
+        "id": "cable-knit-sweater-ivory-s",
+        "color": "ivory",
+        "size": "S",
+        "stock": 1
+      },
+      {
+        "id": "cable-knit-sweater-ivory-m",
+        "color": "ivory",
+        "size": "M",
+        "stock": 8
+      },
+      {
+        "id": "cable-knit-sweater-ivory-l",
+        "color": "ivory",
+        "size": "L",
+        "stock": 5
+      },
+      {
+        "id": "cable-knit-sweater-ivory-xl",
+        "color": "ivory",
+        "size": "XL",
+        "stock": 1
+      }
+    ],
+    "material": {
+      "en": "Knitted from natural fibres, undyed where the colour allows.",
+      "ar": "محبوك من ألياف طبيعية، دون صباغة حيث يسمح اللون."
+    },
+    "care": {
+      "en": "Dry clean or hand wash cold. Dry flat, away from the sun.",
+      "ar": "تنظيف جاف أو غسيل يدوي بماء بارد. يُجفف مفروداً بعيداً عن الشمس."
+    },
+    "lookIds": [],
+    "related": ["wool-overcoat", "waxed-field-jacket", "suede-overshirt"]
+  },
+  {
+    "handle": "flannel-trouser",
+    "department": "men",
+    "category": "trousers",
+    "title": {
+      "en": "Flannel Trouser",
+      "ar": "بنطلون فانيلا"
+    },
+    "description": {
+      "en": "Flannel Trouser — made slowly in a small workshop, to be worn for years.",
+      "ar": "بنطلون فانيلا — مصنوع على مهل في مشغل صغير، ليُلبس سنين."
+    },
+    "price": 5400,
+    "compareAt": null,
+    "badge": "new",
+    "colors": [
+      {
+        "id": "grey",
+        "label": {
+          "en": "Grey Melange",
+          "ar": "رمادي مُبرقش"
+        },
+        "swatch": "#8E8A85",
+        "images": ["products/flannel-trouser/grey-1", "products/flannel-trouser/grey-2"]
+      },
+      {
+        "id": "charcoal",
+        "label": {
+          "en": "Charcoal",
+          "ar": "فحمي"
+        },
+        "swatch": "#3A3632",
+        "images": ["products/flannel-trouser/charcoal-1", "products/flannel-trouser/charcoal-2"]
+      },
+      {
+        "id": "stone",
+        "label": {
+          "en": "Stone",
+          "ar": "حجري"
+        },
+        "swatch": "#A9A091",
+        "images": ["products/flannel-trouser/stone-1", "products/flannel-trouser/stone-2"]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "variants": [
+      {
+        "id": "flannel-trouser-grey-xs",
+        "color": "grey",
+        "size": "XS",
+        "stock": 4
+      },
+      {
+        "id": "flannel-trouser-grey-s",
+        "color": "grey",
+        "size": "S",
+        "stock": 2
+      },
+      {
+        "id": "flannel-trouser-grey-m",
+        "color": "grey",
+        "size": "M",
+        "stock": 6
+      },
+      {
+        "id": "flannel-trouser-grey-l",
+        "color": "grey",
+        "size": "L",
+        "stock": 2
+      },
+      {
+        "id": "flannel-trouser-grey-xl",
+        "color": "grey",
+        "size": "XL",
+        "stock": 6
+      },
+      {
+        "id": "flannel-trouser-charcoal-xs",
+        "color": "charcoal",
+        "size": "XS",
+        "stock": 3
+      },
+      {
+        "id": "flannel-trouser-charcoal-s",
+        "color": "charcoal",
+        "size": "S",
+        "stock": 8
+      },
+      {
+        "id": "flannel-trouser-charcoal-m",
+        "color": "charcoal",
+        "size": "M",
+        "stock": 5
+      },
+      {
+        "id": "flannel-trouser-charcoal-l",
+        "color": "charcoal",
+        "size": "L",
+        "stock": 4
+      },
+      {
+        "id": "flannel-trouser-charcoal-xl",
+        "color": "charcoal",
+        "size": "XL",
+        "stock": 7
+      },
+      {
+        "id": "flannel-trouser-stone-xs",
+        "color": "stone",
+        "size": "XS",
+        "stock": 2
+      },
+      {
+        "id": "flannel-trouser-stone-s",
+        "color": "stone",
+        "size": "S",
+        "stock": 3
+      },
+      {
+        "id": "flannel-trouser-stone-m",
+        "color": "stone",
+        "size": "M",
+        "stock": 4
+      },
+      {
+        "id": "flannel-trouser-stone-l",
+        "color": "stone",
+        "size": "L",
+        "stock": 8
+      },
+      {
+        "id": "flannel-trouser-stone-xl",
+        "color": "stone",
+        "size": "XL",
+        "stock": 5
+      }
+    ],
+    "material": {
+      "en": "Woven natural fibres with a horn button closure.",
+      "ar": "ألياف طبيعية منسوجة وزر من القرن."
+    },
+    "care": {
+      "en": "Dry clean or hand wash cold. Dry flat, away from the sun.",
+      "ar": "تنظيف جاف أو غسيل يدوي بماء بارد. يُجفف مفروداً بعيداً عن الشمس."
+    },
+    "lookIds": [],
+    "related": ["wool-overcoat", "waxed-field-jacket", "suede-overshirt"]
+  },
+  {
+    "handle": "linen-drawstring-trouser",
+    "department": "men",
+    "category": "trousers",
+    "title": {
+      "en": "Linen Drawstring Trouser",
+      "ar": "بنطلون كتان برباط"
+    },
+    "description": {
+      "en": "Linen Drawstring Trouser — made slowly in a small workshop, to be worn for years.",
+      "ar": "بنطلون كتان برباط — مصنوع على مهل في مشغل صغير، ليُلبس سنين."
+    },
+    "price": 4200,
+    "compareAt": null,
+    "badge": null,
+    "colors": [
+      {
+        "id": "sand",
+        "label": {
+          "en": "Sand",
+          "ar": "رملي"
+        },
+        "swatch": "#C9B48F",
+        "images": ["products/linen-drawstring-trouser/sand-1"]
+      },
+      {
+        "id": "navy",
+        "label": {
+          "en": "Navy",
+          "ar": "كحلي"
+        },
+        "swatch": "#2C3442",
+        "images": ["products/linen-drawstring-trouser/navy-1"]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "variants": [
+      {
+        "id": "linen-drawstring-trouser-sand-xs",
+        "color": "sand",
+        "size": "XS",
+        "stock": 1
+      },
+      {
+        "id": "linen-drawstring-trouser-sand-s",
+        "color": "sand",
+        "size": "S",
+        "stock": 2
+      },
+      {
+        "id": "linen-drawstring-trouser-sand-m",
+        "color": "sand",
+        "size": "M",
+        "stock": 4
+      },
+      {
+        "id": "linen-drawstring-trouser-sand-l",
+        "color": "sand",
+        "size": "L",
+        "stock": 3
+      },
+      {
+        "id": "linen-drawstring-trouser-sand-xl",
+        "color": "sand",
+        "size": "XL",
+        "stock": 4
+      },
+      {
+        "id": "linen-drawstring-trouser-navy-xs",
+        "color": "navy",
+        "size": "XS",
+        "stock": 5
+      },
+      {
+        "id": "linen-drawstring-trouser-navy-s",
+        "color": "navy",
+        "size": "S",
+        "stock": 3
+      },
+      {
+        "id": "linen-drawstring-trouser-navy-m",
+        "color": "navy",
+        "size": "M",
+        "stock": 1
+      },
+      {
+        "id": "linen-drawstring-trouser-navy-l",
+        "color": "navy",
+        "size": "L",
+        "stock": 1
+      },
+      {
+        "id": "linen-drawstring-trouser-navy-xl",
+        "color": "navy",
+        "size": "XL",
+        "stock": 6
+      }
+    ],
+    "material": {
+      "en": "Woven natural fibres with a horn button closure.",
+      "ar": "ألياف طبيعية منسوجة وزر من القرن."
+    },
+    "care": {
+      "en": "Dry clean or hand wash cold. Dry flat, away from the sun.",
+      "ar": "تنظيف جاف أو غسيل يدوي بماء بارد. يُجفف مفروداً بعيداً عن الشمس."
+    },
+    "lookIds": [],
+    "related": ["wool-overcoat", "waxed-field-jacket", "suede-overshirt"]
+  },
+  {
+    "handle": "corduroy-trouser",
+    "department": "men",
+    "category": "trousers",
+    "title": {
+      "en": "Corduroy Trouser",
+      "ar": "بنطلون قطيفة مضلّعة"
+    },
+    "description": {
+      "en": "Corduroy Trouser — made slowly in a small workshop, to be worn for years.",
+      "ar": "بنطلون قطيفة مضلّعة — مصنوع على مهل في مشغل صغير، ليُلبس سنين."
+    },
+    "price": 4600,
+    "compareAt": null,
+    "badge": null,
+    "colors": [
+      {
+        "id": "chocolate",
+        "label": {
+          "en": "Chocolate",
+          "ar": "شوكولاتة"
+        },
+        "swatch": "#5A3E2E",
+        "images": ["products/corduroy-trouser/chocolate-1", "products/corduroy-trouser/chocolate-2"]
+      },
+      {
+        "id": "olive",
+        "label": {
+          "en": "Olive",
+          "ar": "زيتوني"
+        },
+        "swatch": "#6B6A4B",
+        "images": ["products/corduroy-trouser/olive-1", "products/corduroy-trouser/olive-2"]
+      }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "variants": [
+      {
+        "id": "corduroy-trouser-chocolate-xs",
+        "color": "chocolate",
+        "size": "XS",
+        "stock": 4
+      },
+      {
+        "id": "corduroy-trouser-chocolate-s",
+        "color": "chocolate",
+        "size": "S",
+        "stock": 5
+      },
+      {
+        "id": "corduroy-trouser-chocolate-m",
+        "color": "chocolate",
+        "size": "M",
+        "stock": 8
+      },
+      {
+        "id": "corduroy-trouser-chocolate-l",
+        "color": "chocolate",
+        "size": "L",
+        "stock": 1
+      },
+      {
+        "id": "corduroy-trouser-chocolate-xl",
+        "color": "chocolate",
+        "size": "XL",
+        "stock": 4
+      },
+      {
+        "id": "corduroy-trouser-olive-xs",
+        "color": "olive",
+        "size": "XS",
+        "stock": 0
+      },
+      {
+        "id": "corduroy-trouser-olive-s",
+        "color": "olive",
+        "size": "S",
+        "stock": 0
+      },
+      {
+        "id": "corduroy-trouser-olive-m",
+        "color": "olive",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "id": "corduroy-trouser-olive-l",
+        "color": "olive",
+        "size": "L",
+        "stock": 0
+      },
+      {
+        "id": "corduroy-trouser-olive-xl",
+        "color": "olive",
+        "size": "XL",
+        "stock": 0
+      }
+    ],
+    "material": {
+      "en": "Woven natural fibres with a horn button closure.",
+      "ar": "ألياف طبيعية منسوجة وزر من القرن."
+    },
+    "care": {
+      "en": "Dry clean or hand wash cold. Dry flat, away from the sun.",
+      "ar": "تنظيف جاف أو غسيل يدوي بماء بارد. يُجفف مفروداً بعيداً عن الشمس."
+    },
+    "lookIds": [],
+    "related": ["wool-overcoat", "waxed-field-jacket", "suede-overshirt"]
+  },
+  {
+    "handle": "cashmere-scarf",
+    "department": "men",
+    "category": "accessories",
+    "title": {
+      "en": "Cashmere Scarf",
+      "ar": "وشاح كشمير"
+    },
+    "description": {
+      "en": "Cashmere Scarf — made slowly in a small workshop, to be worn for years.",
+      "ar": "وشاح كشمير — مصنوع على مهل في مشغل صغير، ليُلبس سنين."
+    },
+    "price": 3900,
+    "compareAt": null,
+    "badge": null,
+    "colors": [
+      {
+        "id": "camel",
+        "label": {
+          "en": "Camel",
+          "ar": "جملي"
+        },
+        "swatch": "#B48A5E",
+        "images": ["products/cashmere-scarf/camel-1", "products/cashmere-scarf/camel-2"]
+      },
+      {
+        "id": "grey",
+        "label": {
+          "en": "Grey Melange",
+          "ar": "رمادي مُبرقش"
+        },
+        "swatch": "#8E8A85",
+        "images": ["products/cashmere-scarf/grey-1", "products/cashmere-scarf/grey-2"]
+      },
+      {
+        "id": "navy",
+        "label": {
+          "en": "Navy",
+          "ar": "كحلي"
+        },
+        "swatch": "#2C3442",
+        "images": ["products/cashmere-scarf/navy-1", "products/cashmere-scarf/navy-2"]
+      }
+    ],
+    "sizes": ["ONE"],
+    "variants": [
+      {
+        "id": "cashmere-scarf-camel-one",
+        "color": "camel",
+        "size": "ONE",
+        "stock": 2
+      },
+      {
+        "id": "cashmere-scarf-grey-one",
+        "color": "grey",
+        "size": "ONE",
+        "stock": 4
+      },
+      {
+        "id": "cashmere-scarf-navy-one",
+        "color": "navy",
+        "size": "ONE",
+        "stock": 1
+      }
+    ],
+    "material": {
+      "en": "Vegetable-tanned leather or pure cashmere.",
+      "ar": "جلد مدبوغ نباتياً أو كشمير خالص."
+    },
+    "care": {
+      "en": "Dry clean or hand wash cold. Dry flat, away from the sun.",
+      "ar": "تنظيف جاف أو غسيل يدوي بماء بارد. يُجفف مفروداً بعيداً عن الشمس."
+    },
+    "lookIds": [],
+    "related": ["wool-overcoat", "waxed-field-jacket", "suede-overshirt"]
+  },
+  {
+    "handle": "leather-belt",
+    "department": "men",
+    "category": "accessories",
+    "title": {
+      "en": "Leather Belt",
+      "ar": "حزام جلد"
+    },
+    "description": {
+      "en": "Leather Belt — made slowly in a small workshop, to be worn for years.",
+      "ar": "حزام جلد — مصنوع على مهل في مشغل صغير، ليُلبس سنين."
+    },
+    "price": 2400,
+    "compareAt": null,
+    "badge": null,
+    "colors": [
+      {
+        "id": "chocolate",
+        "label": {
+          "en": "Chocolate",
+          "ar": "شوكولاتة"
+        },
+        "swatch": "#5A3E2E",
+        "images": ["products/leather-belt/chocolate-1", "products/leather-belt/chocolate-2"]
+      },
+      {
+        "id": "black",
+        "label": {
+          "en": "Black",
+          "ar": "أسود"
+        },
+        "swatch": "#1F1C19",
+        "images": ["products/leather-belt/black-1", "products/leather-belt/black-2"]
+      }
+    ],
+    "sizes": ["ONE"],
+    "variants": [
+      {
+        "id": "leather-belt-chocolate-one",
+        "color": "chocolate",
+        "size": "ONE",
+        "stock": 2
+      },
+      {
+        "id": "leather-belt-black-one",
+        "color": "black",
+        "size": "ONE",
+        "stock": 6
+      }
+    ],
+    "material": {
+      "en": "Vegetable-tanned leather or pure cashmere.",
+      "ar": "جلد مدبوغ نباتياً أو كشمير خالص."
+    },
+    "care": {
+      "en": "Dry clean or hand wash cold. Dry flat, away from the sun.",
+      "ar": "تنظيف جاف أو غسيل يدوي بماء بارد. يُجفف مفروداً بعيداً عن الشمس."
+    },
+    "lookIds": [],
+    "related": ["wool-overcoat", "waxed-field-jacket", "suede-overshirt"]
+  },
+  {
+    "handle": "wool-beanie",
+    "department": "men",
+    "category": "accessories",
+    "title": {
+      "en": "Wool Beanie",
+      "ar": "قبعة صوف"
+    },
+    "description": {
+      "en": "Wool Beanie — made slowly in a small workshop, to be worn for years.",
+      "ar": "قبعة صوف — مصنوع على مهل في مشغل صغير، ليُلبس سنين."
+    },
+    "price": 1800,
+    "compareAt": null,
+    "badge": null,
+    "colors": [
+      {
+        "id": "charcoal",
+        "label": {
+          "en": "Charcoal",
+          "ar": "فحمي"
+        },
+        "swatch": "#3A3632",
+        "images": ["products/wool-beanie/charcoal-1", "products/wool-beanie/charcoal-2"]
+      }
+    ],
+    "sizes": ["ONE"],
+    "variants": [
+      {
+        "id": "wool-beanie-charcoal-one",
+        "color": "charcoal",
+        "size": "ONE",
+        "stock": 0
+      }
+    ],
+    "material": {
+      "en": "Vegetable-tanned leather or pure cashmere.",
+      "ar": "جلد مدبوغ نباتياً أو كشمير خالص."
+    },
+    "care": {
+      "en": "Dry clean or hand wash cold. Dry flat, away from the sun.",
+      "ar": "تنظيف جاف أو غسيل يدوي بماء بارد. يُجفف مفروداً بعيداً عن الشمس."
+    },
+    "lookIds": [],
+    "related": ["wool-overcoat", "waxed-field-jacket", "suede-overshirt"]
+  }
+]

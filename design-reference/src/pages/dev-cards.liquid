@@ -1,0 +1,24 @@
+---
+pagination:
+  data: site.languages
+  size: 1
+  alias: language
+permalink: "{{ language.prefix }}/dev/cards/"
+layout: layouts/base.liquid
+titleKey: meta.devCardsTitle
+noindex: true
+---
+{%- comment -%}
+  Component preview: every catalog product as a card, so each card state (sold out, one colour,
+  one picture, discount, +N colours) can be seen and tested. Not linked from the site.
+{%- endcomment -%}
+<section class="s-product-grid">
+  <div class="u-container">
+    <h1 class="u-h2">{{ 'meta.devCardsTitle' | t }}</h1>
+    <div class="s-product-grid__grid s-product-grid__grid--preview">
+      {%- for p in shop.products %}
+      {% include 'components/product-card', product: p, group: 'preview' %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>

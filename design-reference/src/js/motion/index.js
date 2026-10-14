@@ -41,4 +41,7 @@ export async function initMotion() {
 
   document.documentElement.classList.remove(PENDING);
   ScrollTrigger.refresh();
+
+  // Components that change layout (tabs showing a hidden panel …) ask for a re-measure.
+  document.addEventListener('motion:refresh', () => ScrollTrigger.refresh());
 }

@@ -1,0 +1,24 @@
+/* Text link — small uppercase, a fine underline that stretches on hover, and ⟶. */
+.c-text-link {
+  display: inline-flex;
+  gap: var(--space-2);
+  align-items: center;
+  min-block-size: 44px;
+  font-size: var(--size-button);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-button);
+  white-space: nowrap;
+  background: linear-gradient(currentcolor, currentcolor) no-repeat 0 calc(100% - 10px) / 60% 1px;
+  transition: background-size var(--duration-base) var(--ease-out);
+}
+
+.c-text-link:hover {
+  background-size: 100% 1px;
+}
+
+[dir='rtl'] .c-text-link {
+  font-size: var(--size-small);
+  text-transform: none;
+  background-position: 100% calc(100% - 10px);
+}

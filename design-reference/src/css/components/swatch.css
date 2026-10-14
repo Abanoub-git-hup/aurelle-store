@@ -1,0 +1,66 @@
+/* Colour swatch — a 14px dot in the fabric's colour (set inline as --swatch).
+   The label is larger than the dot so it's easy to hit; the radio stays in the
+   accessibility tree and keyboard order (FR-1.1). */
+.c-swatch {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  inline-size: 24px;
+  block-size: 24px;
+  cursor: pointer;
+}
+
+.c-swatch::before {
+  inline-size: 14px;
+  block-size: 14px;
+  content: '';
+  background: var(--swatch);
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.c-swatch__input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.c-swatch:hover::before {
+  box-shadow:
+    inset 0 0 0 1px var(--line),
+    0 0 0 2px var(--bg),
+    0 0 0 3px var(--line);
+}
+
+/* Selected: a fine ink ring around the dot. */
+.c-swatch:has(.c-swatch__input:checked)::before {
+  box-shadow:
+    inset 0 0 0 1px var(--line),
+    0 0 0 2px var(--bg),
+    0 0 0 3px var(--ink);
+}
+
+.c-swatch:has(.c-swatch__input:focus-visible) {
+  outline: 1px solid var(--ink);
+  outline-offset: 1px;
+}
+
+/* Sold-out colour: a diagonal stroke through the dot (FR-1.4). */
+.c-swatch.is-unavailable::after {
+  position: absolute;
+  inline-size: 18px;
+  block-size: 1px;
+  content: '';
+  background: var(--muted);
+  transform: rotate(-45deg);
+}
+
+/* Fingers need more room than a cursor. */
+@media (pointer: coarse) {
+  .c-swatch {
+    inline-size: 32px;
+    block-size: 32px;
+  }
+}

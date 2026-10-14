@@ -1,0 +1,37 @@
+[
+  {
+    "id": "outerwear",
+    "title": { "en": "Outerwear", "ar": "المعاطف" },
+    "departments": ["women", "men"],
+    "image": "categories/outerwear",
+    "order": 1
+  },
+  {
+    "id": "knitwear",
+    "title": { "en": "Knitwear", "ar": "التريكو" },
+    "departments": ["women", "men"],
+    "image": "categories/knitwear",
+    "order": 2
+  },
+  {
+    "id": "dresses",
+    "title": { "en": "Dresses", "ar": "الفساتين" },
+    "departments": ["women"],
+    "image": "categories/dresses",
+    "order": 3
+  },
+  {
+    "id": "trousers",
+    "title": { "en": "Trousers", "ar": "البناطيل" },
+    "departments": ["women", "men"],
+    "image": "categories/trousers",
+    "order": 4
+  },
+  {
+    "id": "accessories",
+    "title": { "en": "Accessories", "ar": "الإكسسوارات" },
+    "departments": ["women", "men"],
+    "image": "categories/accessories",
+    "order": 5
+  }
+]

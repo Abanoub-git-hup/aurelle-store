@@ -17,6 +17,8 @@ titleKey: meta.homeTitle
   </div>
 </section>
 
+{% include 'sections/product-grid', id: 'new-in', list: shop.lists.newIn, eyebrowKey: 'newIn.eyebrow', titleKey: 'newIn.title' %}
+
 {%- comment -%}
   Temporary motion study — exercises M3, M5, M6, M7 and M8 until the real home sections
   (Made by Hand, Shop by Category …) take these effects over in their own tickets.
@@ -30,11 +32,10 @@ titleKey: meta.homeTitle
       <div class="s-motion-demo__picture" aria-hidden="true"></div>
     </div>
     <ul class="s-motion-demo__cards" data-motion="cards">
-      {%- assign demoCategories = 'outerwear,knitwear,trousers,accessories' | split: ',' %}
-      {%- for c in demoCategories %}
+      {%- for c in shop.categories limit: 4 %}
       <li class="s-motion-demo__card">
         <div class="s-motion-demo__tile" aria-hidden="true"></div>
-        <p class="s-motion-demo__name u-h3">{{ 'category.' | append: c | t }}</p>
+        <p class="s-motion-demo__name u-h3">{{ c.title | loc }}</p>
       </li>
       {%- endfor %}
     </ul>

@@ -1,14 +1,17 @@
 {
   "meta": {
     "homeTitle": "{brand} — A quieter luxury",
-    "description": "Natural fibres, made slowly to be worn for years. Womenswear and menswear by {brand}."
+    "description": "Natural fibres, made slowly to be worn for years. Womenswear and menswear by {brand}.",
+    "devCardsTitle": "Card preview"
   },
   "a11y": {
     "skip": "Skip to content",
     "home": "{brand}, home",
     "mainNav": "Main",
     "footerNav": "Footer",
-    "language": "Language"
+    "language": "Language",
+    "department": "Department",
+    "colours": "Colours"
   },
   "nav": {
     "women": "Women",
@@ -41,16 +44,25 @@
     "connect": "Connect",
     "rights": "© 2026 {brand}. All rights reserved."
   },
-  "category": {
-    "outerwear": "Outerwear",
-    "knitwear": "Knitwear",
-    "dresses": "Dresses",
-    "trousers": "Trousers",
-    "accessories": "Accessories"
-  },
   "motionDemo": {
     "eyebrow": "Made by hand",
     "title": "Worn slowly, kept for years",
     "text": "Every piece begins as a bolt of undyed wool or linen in a small workshop. It is cut by hand, sewn by the same pair of hands, and pressed only when it is ready — so it can be worn for a decade and still feel like the first morning."
+  },
+  "card": {
+    "new": "New",
+    "discount": "−{n}%",
+    "soldOut": "Sold out",
+    "price": "Price",
+    "was": "Was",
+    "moreColours": "+{n}",
+    "moreColoursLabel": "{n} more colours"
+  },
+  "common": {
+    "viewAll": "View all"
+  },
+  "newIn": {
+    "eyebrow": "Just arrived",
+    "title": "New In"
   }
 }

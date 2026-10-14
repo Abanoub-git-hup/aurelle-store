@@ -1,0 +1,31 @@
+/* Women / Men above a grid — the active tab is underlined. */
+.c-dept-tabs {
+  display: flex;
+  gap: var(--space-6);
+  margin-block-end: var(--space-6);
+}
+
+.c-dept-tabs[hidden] {
+  display: none;
+}
+
+.c-dept-tabs__tab {
+  min-block-size: 44px;
+  font-size: var(--size-button);
+  font-weight: 500;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-button);
+}
+
+.c-dept-tabs__tab[aria-selected='true'] {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 8px;
+}
+
+[dir='rtl'] .c-dept-tabs__tab {
+  font-size: var(--size-small);
+  text-transform: none;
+}

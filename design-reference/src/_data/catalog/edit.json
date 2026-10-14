@@ -1,0 +1,14 @@
+{
+  "newIn": {
+    "women": ["wool-wrap-coat", "cashmere-crew", "silk-slip-dress", "pleated-wool-trouser"],
+    "men": ["wool-overcoat", "merino-polo", "flannel-trouser", "waxed-field-jacket"]
+  },
+  "theEdit": {
+    "women": ["double-faced-cape", "mohair-cardigan", "linen-shirt-dress", "leather-tote"],
+    "men": ["suede-overshirt", "cable-knit-sweater", "corduroy-trouser", "cashmere-scarf"]
+  },
+  "mostLoved": {
+    "women": ["quilted-linen-jacket", "ribbed-turtleneck", "wool-column-dress", "wide-linen-trouser"],
+    "men": ["shawl-collar-cardigan", "linen-drawstring-trouser", "leather-belt", "wool-beanie"]
+  }
+}

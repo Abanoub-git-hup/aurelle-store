@@ -1,0 +1,41 @@
+/* Curated product rows on the home page (New In, The Edit, Most Loved). */
+.s-product-grid {
+  padding-block: var(--section-gap) 0;
+}
+
+.s-product-grid__head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-block-end: var(--space-6);
+}
+
+.s-product-grid__head .u-eyebrow {
+  margin-block-end: var(--space-3);
+}
+
+.s-product-grid__panel + .s-product-grid__panel {
+  margin-block-start: var(--space-8); /* without JS both departments stack */
+}
+
+.s-product-grid__panel[hidden] {
+  display: none;
+}
+
+.s-product-grid__grid--preview {
+  margin-block-start: var(--space-7);
+}
+
+.s-product-grid__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-7) var(--grid-gap);
+}
+
+@media (width >= 1200px) {
+  .s-product-grid__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
